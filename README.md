@@ -3,5 +3,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Currently under construction
 
 # Description
-Simple application based on React and Redux that present countries into table from API.
+Simple application based on React and Redux that fetching data from API and present it as countries into table.
 
