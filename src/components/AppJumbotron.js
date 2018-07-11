@@ -5,8 +5,7 @@ const appJumbotron = (props) => {
   return (
       <Jumbotron className="bg-dark" fluid>
         <Container fluid>
-          <h3 className="display-4 text-center text-white">Countries App</h3>
-          <p className="lead text-center text-white">countries table</p>
+          <h2 className="display-5 text-center text-white">Countries App</h2>
         </Container>
       </Jumbotron>
   );

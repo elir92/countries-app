@@ -1,9 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createLogger } from 'redux-logger';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
+import { countriesReducer } from './store/reducers/reducers';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const middlewares = [thunk];
+
+if (process.env.NODE_ENV === `development`) {
+    const logger = (createLogger());
+    middlewares.push(logger);
+}
+
+const rootReducer = combineReducers({ countriesReducer });
+const store = createStore(rootReducer, applyMiddleware(...middlewares));
+
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
