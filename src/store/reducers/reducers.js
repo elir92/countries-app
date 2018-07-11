@@ -12,7 +12,7 @@ const requestCountriesPending = (state) => {
 };
 
 const requestCountriesSuccess = (state, action) => {
-    return updateObject(state, { books: action.payload, isPending: false });
+    return updateObject(state, { countries: action.payload, isPending: false });
 };
 
 const requestCountriesFail = (state, action) => {
