@@ -8,3 +8,8 @@ export const requestCountries = () => (dispatch) => {
         .then(countries => dispatch({ type: actionType.REQUEST_COUNTRIES_SUCCESS, payload: countries.data }))
         .catch(error => dispatch({ type: actionType.REQUEST_COUNTRIES_FAILED, payload: error }));
 };
+
+export const switchPage = (num) => ({
+    type: actionType.SWITCH_PAGE,
+    payload: num
+});
