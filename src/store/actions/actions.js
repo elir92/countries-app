@@ -9,7 +9,12 @@ export const requestCountries = () => (dispatch) => {
         .catch(error => dispatch({ type: actionType.REQUEST_COUNTRIES_FAILED, payload: error }));
 };
 
-export const switchPage = (num) => ({
-    type: actionType.SWITCH_PAGE,
-    payload: num
+export const nextPage = (num) => ({
+    type: actionType.NEXT_PAGE,
+    payload: num + 1
+});
+
+export const prevPage = (num) => ({
+    type: actionType.PREV_PAGE,
+    payload: num - 1
 });
