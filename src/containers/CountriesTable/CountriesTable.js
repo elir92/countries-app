@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { requestCountries, switchPage } from '../../store/actions/actions';
-import { paginate, displayPages } from '../../utility';
-import { Table, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import { requestCountries, nextPage, prevPage } from '../../store/actions/actions';
+import { paginate } from '../../utility';
+import { Table, Button } from 'reactstrap';
 
 
 class CountriesTable extends React.Component {
@@ -23,26 +23,10 @@ class CountriesTable extends React.Component {
         });
     }
 
-    renderButtons = (arr) => {
-        return (
-            <Pagination className="d-flex justify-content-center">
-                {arr.map(btnNumber => {
-                    return (
-                        <PaginationLink  onClick={() => this.props.switchPageHandler(btnNumber)} key={btnNumber}>
-                            <PaginationItem >
-                                {btnNumber}
-                            </PaginationItem>
-                        </PaginationLink>
-                    );
-                })}
-            </Pagination>
-        );
-    }
 
     renderTable = () => {
-        const { countries, currentPage, countriesPerPage } = this.props;
+        const { countries, currentPage, countriesPerPage, nextPageHandler, prevPageHandler } = this.props;
         const currentCountries = paginate(countries, currentPage, countriesPerPage);
-        const pageButtonNumbers = displayPages(countries, countriesPerPage);
         // const filteredCountry = countries.filter(country => {
         //     return country.name.toLowerCase().includes(searchField.toLowerCase());
         // });
@@ -62,7 +46,10 @@ class CountriesTable extends React.Component {
                         {this.renderCountriesRows(currentCountries)}
                     </tbody>
                 </Table>
-                {this.renderButtons(pageButtonNumbers)}
+                <div className="d-flex justify-content-center">
+                    <Button outline onClick={() => prevPageHandler(currentPage)}>Previous Page</Button>
+                    <Button outline onClick={() => nextPageHandler(currentPage)}>Next Page</Button>
+                </div>
             </Fragment>
 
         )
@@ -89,8 +76,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
     return {
         requestCountriesHandler: () => dispatch(requestCountries()),
-        switchPageHandler: (num) => dispatch(switchPage(num))
-
+        nextPageHandler: (num) => dispatch(nextPage(num)),
+        prevPageHandler: (num) => dispatch(prevPage(num))
     }
 }
 
