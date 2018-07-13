@@ -47,8 +47,8 @@ class CountriesTable extends React.Component {
                     </tbody>
                 </Table>
                 <div className="d-flex justify-content-center">
-                    <Button outline onClick={() => prevPageHandler(currentPage)}>Previous Page</Button>
-                    <Button outline onClick={() => nextPageHandler(currentPage)}>Next Page</Button>
+                    <Button disabled={this.props.prevDisable} outline onClick={() => prevPageHandler(currentPage)}>Previous Page</Button>
+                    <Button disabled={this.props.nextDisable} outline onClick={() => nextPageHandler(currentPage)}>Next Page</Button>
                 </div>
             </Fragment>
 
@@ -69,7 +69,9 @@ const mapStateToProps = state => {
         countries: state.countriesReducer.countries,
         isPending: state.countriesReducer.isPending,
         countriesPerPage: state.countriesReducer.countriesPerPage,
-        currentPage: state.countriesReducer.currentPage
+        currentPage: state.countriesReducer.currentPage,
+        prevDisable: state.countriesReducer.prevDisable,
+        nextDisable: state.countriesReducer.nextDisable
     }
 }
 
