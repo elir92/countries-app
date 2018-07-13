@@ -6,7 +6,10 @@ const initialState = {
     countries: [],
     error: null,
     currentPage: 1,
-    countriesPerPage: 10
+    countriesPerPage: 10,
+    prevDisable: true,
+    nextDisable: false,
+    amountOfPages: 0
 }
 
 const requestCountriesPending = (state) => {
@@ -14,7 +17,8 @@ const requestCountriesPending = (state) => {
 };
 
 const requestCountriesSuccess = (state, action) => {
-    return updateObject(state, { countries: action.payload, isPending: false });
+    const amount = Math.ceil(action.payload.length / state.countriesPerPage);
+    return updateObject(state, { countries: action.payload, isPending: false, amountOfPages: amount });
 };
 
 const requestCountriesFail = (state, action) => {
@@ -22,11 +26,24 @@ const requestCountriesFail = (state, action) => {
 };
 
 const nextPage = (state, action) => {
-    return updateObject(state, { currentPage: action.payload });
+    if (action.payload < state.amountOfPages) {
+        return updateObject(state, { currentPage: action.payload, prevDisable: false });
+    }
+
+    if (action.payload === state.amountOfPages) {
+        return updateObject(state, { currentPage: action.payload, prevDisable: false, nextDisable: true });
+    }
+
 };
 
 const prevPage = (state, action) => {
-    return updateObject(state, { currentPage: action.payload });
+    if (action.payload > 1) {
+        return updateObject(state, { currentPage: action.payload, nextDisable: false });
+    }
+
+    if (action.payload <= 1) {
+        return updateObject(state, { currentPage: action.payload, prevDisable: true });
+    }
 };
 
 
@@ -35,8 +52,8 @@ export const countriesReducer = (state = initialState, action) => {
         case actionType.REQUEST_COUNTRIES_PENDING: return requestCountriesPending(state);
         case actionType.REQUEST_COUNTRIES_SUCCESS: return requestCountriesSuccess(state, action);
         case actionType.REQUEST_COUNTRIES_FAILED: return requestCountriesFail(state, action);
-        case actionType.NEXT_PAGE: return nextPage(state,action);
-        case actionType.PREV_PAGE: return prevPage(state,action);
+        case actionType.NEXT_PAGE: return nextPage(state, action);
+        case actionType.PREV_PAGE: return prevPage(state, action);
         default: return state;
     }
 };
