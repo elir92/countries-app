@@ -35,23 +35,24 @@ class CountriesTable extends React.Component {
 
         return (
             <Fragment>
-                <Table striped bordered hover responsive>
-                    <thead className="table-thead" >
-                        <tr>
-                            <th>Name</th>
-                            <th>Capital</th>
-                            <th>Region</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.renderCountriesRows(currentCountries)}
-                    </tbody>
-                </Table>
+                    <Table className="Table" striped bordered hover responsive>
+                        <thead className="Table-thead" >
+                            <tr>
+                                <th>Name</th>
+                                <th>Capital</th>
+                                <th>Region</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.renderCountriesRows(currentCountries)}
+                        </tbody>
+                    </Table>
                 <div className="d-flex justify-content-center">
-                    <Button style={{marginLeft:'10px'}} disabled={this.props.prevDisable} outline onClick={() => prevPageHandler(currentPage)}>Previous Page</Button>
-                    <Button style={{marginLeft:'10px'}} disabled={this.props.nextDisable} outline onClick={() => nextPageHandler(currentPage)}>Next Page</Button>
+                    <Button className="Button-table" disabled={this.props.prevDisable} outline onClick={() => prevPageHandler(currentPage)}>Previous Page</Button>
+                    <Button className="Button-table" disabled={this.props.nextDisable} outline onClick={() => nextPageHandler(currentPage)}>Next Page</Button>
                 </div>
             </Fragment>
+
 
         )
     }

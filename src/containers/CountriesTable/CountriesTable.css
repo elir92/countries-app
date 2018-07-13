@@ -1,4 +1,14 @@
-.table-thead{
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed');
+
+.Table{
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 1.2em;
+}
+.Table-thead{
     color:white;
     background-color: #575454;
+}
+
+.Button-table {
+    margin-left: 10px;
 }
