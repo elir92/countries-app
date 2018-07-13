@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { requestCountries, nextPage, prevPage } from '../../store/actions/actions';
 import { paginate } from '../../utility';
 import { Table, Button } from 'reactstrap';
+import './CountriesTable.css';
 
 
 class CountriesTable extends React.Component {
@@ -34,8 +35,8 @@ class CountriesTable extends React.Component {
 
         return (
             <Fragment>
-                <Table bordered hover responsive>
-                    <thead>
+                <Table striped bordered hover responsive>
+                    <thead className="table-thead" >
                         <tr>
                             <th>Name</th>
                             <th>Capital</th>
