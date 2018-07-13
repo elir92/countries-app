@@ -48,8 +48,8 @@ class CountriesTable extends React.Component {
                     </tbody>
                 </Table>
                 <div className="d-flex justify-content-center">
-                    <Button disabled={this.props.prevDisable} outline onClick={() => prevPageHandler(currentPage)}>Previous Page</Button>
-                    <Button disabled={this.props.nextDisable} outline onClick={() => nextPageHandler(currentPage)}>Next Page</Button>
+                    <Button style={{marginLeft:'10px'}} disabled={this.props.prevDisable} outline onClick={() => prevPageHandler(currentPage)}>Previous Page</Button>
+                    <Button style={{marginLeft:'10px'}} disabled={this.props.nextDisable} outline onClick={() => nextPageHandler(currentPage)}>Next Page</Button>
                 </div>
             </Fragment>
 
