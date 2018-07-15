@@ -35,7 +35,7 @@ class CountriesTable extends React.Component {
         return (
             <Fragment>
                 <label>Search</label><input onChange={searchFieldHandler} type="text" />
-                <Table className="Table" striped bordered hover responsive>
+                <Table className="Table" striped bordered responsive>
                     <thead className="Table-thead" >
                         <tr>
                             <th>Name</th>
