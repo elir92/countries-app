@@ -18,3 +18,8 @@ export const prevPage = (num) => ({
     type: actionType.PREV_PAGE,
     payload: num - 1
 });
+
+export const setSearchField = (text) => ({
+    type: actionType.CHANGE_SEARCH_FIELD,
+    payload: text
+});
