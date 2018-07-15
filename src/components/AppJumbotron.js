@@ -1,11 +1,12 @@
 import React from 'react';
 import { Jumbotron, Container } from 'reactstrap';
+import './AppJumbotron.css';
 
 const appJumbotron = (props) => {
   return (
       <Jumbotron className="bg-dark" fluid>
         <Container fluid>
-          <h2 className="display-5 text-center text-white">Countries App</h2>
+          <h1 className="jumbo-title display-5 text-center text-white">Countries App</h1>
         </Container>
       </Jumbotron>
   );

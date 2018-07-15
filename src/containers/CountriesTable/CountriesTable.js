@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { requestCountries, nextPage, prevPage } from '../../store/actions/actions';
+import { requestCountries, nextPage, prevPage, setSearchField } from '../../store/actions/actions';
 import { paginate } from '../../utility';
 import { Table, Button } from 'reactstrap';
 import './CountriesTable.css';
@@ -26,36 +26,39 @@ class CountriesTable extends React.Component {
 
 
     renderTable = () => {
-        const { countries, currentPage, countriesPerPage, nextPageHandler, prevPageHandler } = this.props;
+        const { countries, currentPage, countriesPerPage, nextPageHandler, prevPageHandler, searchField, searchFieldHandler } = this.props;
         const currentCountries = paginate(countries, currentPage, countriesPerPage);
-        // const filteredCountry = countries.filter(country => {
-        //     return country.name.toLowerCase().includes(searchField.toLowerCase());
-        // });
-
+        const filteredCountry = countries.filter(country => {
+            return country.name.toLowerCase().includes(searchField.toLowerCase());
+        });
 
         return (
             <Fragment>
-                    <Table className="Table" striped bordered hover responsive>
-                        <thead className="Table-thead" >
-                            <tr>
-                                <th>Name</th>
-                                <th>Capital</th>
-                                <th>Region</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.renderCountriesRows(currentCountries)}
-                        </tbody>
-                    </Table>
-                <div className="d-flex justify-content-center">
-                    <Button className="Button-table" disabled={this.props.prevDisable} outline onClick={() => prevPageHandler(currentPage)}>Previous Page</Button>
-                    <Button className="Button-table" disabled={this.props.nextDisable} outline onClick={() => nextPageHandler(currentPage)}>Next Page</Button>
-                </div>
+                <label>Search</label><input onChange={searchFieldHandler} type="text" />
+                <Table className="Table" striped bordered hover responsive>
+                    <thead className="Table-thead" >
+                        <tr>
+                            <th>Name</th>
+                            <th>Capital</th>
+                            <th>Region</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {!searchField.length ? this.renderCountriesRows(currentCountries) : this.renderCountriesRows(filteredCountry)}
+                    </tbody>
+                </Table>
+                
+                {!searchField.length ? (
+                    <div className="d-flex justify-content-center">
+                        <Button className="Button-table" disabled={this.props.prevDisable} outline onClick={() => prevPageHandler(currentPage)}>Previous Page</Button>
+                        <Button className="Button-table" disabled={this.props.nextDisable} outline onClick={() => nextPageHandler(currentPage)}>Next Page</Button>
+                    </div>
+                ) : null}
+
             </Fragment>
-
-
         )
     }
+
 
     render() {
         return (
@@ -73,7 +76,8 @@ const mapStateToProps = state => {
         countriesPerPage: state.countriesReducer.countriesPerPage,
         currentPage: state.countriesReducer.currentPage,
         prevDisable: state.countriesReducer.prevDisable,
-        nextDisable: state.countriesReducer.nextDisable
+        nextDisable: state.countriesReducer.nextDisable,
+        searchField: state.countriesReducer.searchField
     }
 }
 
@@ -81,7 +85,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         requestCountriesHandler: () => dispatch(requestCountries()),
         nextPageHandler: (num) => dispatch(nextPage(num)),
-        prevPageHandler: (num) => dispatch(prevPage(num))
+        prevPageHandler: (num) => dispatch(prevPage(num)),
+        searchFieldHandler: (e) => dispatch(setSearchField(e.target.value))
     }
 }
 

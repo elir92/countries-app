@@ -9,7 +9,8 @@ const initialState = {
     countriesPerPage: 10,
     prevDisable: true,
     nextDisable: false,
-    amountOfPages: 0
+    amountOfPages: 0,
+    searchField: ''
 }
 
 const requestCountriesPending = (state) => {
@@ -46,6 +47,10 @@ const prevPage = (state, action) => {
     }
 };
 
+const setSearchField = (state, action) => {
+    return updateObject(state, { searchField: action.payload });
+};
+
 
 export const countriesReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -54,6 +59,7 @@ export const countriesReducer = (state = initialState, action) => {
         case actionType.REQUEST_COUNTRIES_FAILED: return requestCountriesFail(state, action);
         case actionType.NEXT_PAGE: return nextPage(state, action);
         case actionType.PREV_PAGE: return prevPage(state, action);
+        case actionType.CHANGE_SEARCH_FIELD: return setSearchField(state, action);
         default: return state;
     }
 };
