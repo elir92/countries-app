@@ -12,7 +12,9 @@
     text-align: center;
 }
 
-.flag-img{
+.flag-img {
     margin: auto;
     width: 50%;
+    border: 1px solid white;
+    box-shadow: 4px -1px 11px 5px #dbd1d1;
 }
