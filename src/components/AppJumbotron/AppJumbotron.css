@@ -3,3 +3,9 @@
 .jumbo-title{
     font-family: 'Quicksand', sans-serif;
 }
+
+@media (min-width: 576px){
+    .jumbo-fix {
+        padding: 2rem 1rem;
+    }
+}

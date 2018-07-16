@@ -4,7 +4,7 @@ import './AppJumbotron.css';
 
 const appJumbotron = (props) => {
   return (
-      <Jumbotron className="bg-dark" fluid>
+      <Jumbotron className="bg-dark jumbo-fix" fluid>
         <Container fluid>
           <h1 className="jumbo-title display-5 text-center text-white">Countries App</h1>
         </Container>
