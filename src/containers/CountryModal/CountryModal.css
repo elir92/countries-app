@@ -4,6 +4,10 @@
     font-family: 'Questrial', sans-serif;
 }
 
+.country-card{
+    border: none;
+}
+
 .card-title{
     text-align: center;
 }

@@ -13,15 +13,15 @@ class CountryModal extends React.Component {
             <Modal isOpen={modal} toggle={toggleHandler} className="country-modal">
                 <ModalHeader toggle={toggleHandler}>{currentCountry.name}</ModalHeader>
                 <ModalBody>
-                    <Card>
+                    <Card className="country-card">
                         <CardImg src={currentCountry.flag} alt="Card image cap" className="flag-img" />
                         <CardBody>
                             <CardTitle className="card-title">Located in {currentCountry.region !== "" ? currentCountry.region : `unknown`}</CardTitle>
                             <CardText>
                                 The capital city is {currentCountry.capital !== "" ? currentCountry.capital : `unknown`}. <br />
-                                {currentCountry.name} population number is {currentCountry.population}.  <br />
-                                {currentCountry.name} Alpha 3 Code is {currentCountry.alpha3Code}.
-                                </CardText>
+                                Population number is {currentCountry.population}.  <br />
+                                Alpha 3 Code is <b>{currentCountry.alpha3Code}</b>.
+                            </CardText>
                         </CardBody>
                     </Card>
                 </ModalBody>

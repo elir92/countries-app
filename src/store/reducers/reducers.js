@@ -54,7 +54,8 @@ const setSearchField = (state, action) => {
 };
 
 const setModalState = (state, action) => {
-    return updateObject(state, { modal: true, currentCountry: action.payload });
+    let current_country = {...action.payload, population: action.payload.population.toLocaleString() }
+    return updateObject(state, { modal: true, currentCountry: current_country });
 };
 
 const modalToggle = (state) => {

@@ -4,6 +4,7 @@ import { requestCountries, nextPage, prevPage, setSearchField, setModalState } f
 import { paginate } from '../../utility';
 import { Table, Button } from 'reactstrap';
 import CountryModal from '../CountryModal/CountryModal'
+import Spinner from '../../components/Spinner/Spinner';
 import './CountriesTable.css';
 
 
@@ -64,7 +65,7 @@ class CountriesTable extends React.Component {
     render() {
         return (
             <Fragment>
-                {!this.props.isPending ? this.renderTable() : <h2>Loading...</h2>}
+                {!this.props.isPending ? this.renderTable() : <Spinner />}
                 <CountryModal />
             </Fragment>
         );
