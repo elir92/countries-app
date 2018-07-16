@@ -10,7 +10,9 @@ const initialState = {
     prevDisable: true,
     nextDisable: false,
     amountOfPages: 0,
-    searchField: ''
+    searchField: '',
+    modal: false,
+    currentCountry: {}
 }
 
 const requestCountriesPending = (state) => {
@@ -51,6 +53,14 @@ const setSearchField = (state, action) => {
     return updateObject(state, { searchField: action.payload });
 };
 
+const setModalState = (state, action) => {
+    return updateObject(state, { modal: true, currentCountry: action.payload });
+};
+
+const modalToggle = (state) => {
+    return updateObject(state, { modal: !state.modal, currentCountry: {} });
+};
+
 
 export const countriesReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -60,6 +70,8 @@ export const countriesReducer = (state = initialState, action) => {
         case actionType.NEXT_PAGE: return nextPage(state, action);
         case actionType.PREV_PAGE: return prevPage(state, action);
         case actionType.CHANGE_SEARCH_FIELD: return setSearchField(state, action);
+        case actionType.SET_MODAL_STATE: return setModalState(state, action);
+        case actionType.MODAL_TOGGLE: return modalToggle(state);
         default: return state;
     }
 };

@@ -2,7 +2,7 @@ import axios from 'axios';
 import * as actionType from './actionTypes';
 
 export const requestCountries = () => (dispatch) => {
-    const url = "https://restcountries.eu/rest/v2/all?fields=name;flag;alpha3Code;capital;region;timezones;population";
+    const url = "https://restcountries.eu/rest/v2/all?fields=name;flag;alpha3Code;capital;region;population";
     dispatch({ type: actionType.REQUEST_COUNTRIES_PENDING });
     axios.get(url)
         .then(countries => dispatch({ type: actionType.REQUEST_COUNTRIES_SUCCESS, payload: countries.data }))
@@ -22,4 +22,13 @@ export const prevPage = (num) => ({
 export const setSearchField = (text) => ({
     type: actionType.CHANGE_SEARCH_FIELD,
     payload: text
+});
+
+export const setModalState = (obj) => ({
+    type: actionType.SET_MODAL_STATE,
+    payload: obj
+});
+
+export const modalToggle = () => ({
+    type: actionType.MODAL_TOGGLE
 });
