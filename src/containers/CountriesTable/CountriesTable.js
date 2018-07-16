@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { requestCountries, nextPage, prevPage, setSearchField } from '../../store/actions/actions';
+import { requestCountries, nextPage, prevPage, setSearchField, setModalState } from '../../store/actions/actions';
 import { paginate } from '../../utility';
 import { Table, Button } from 'reactstrap';
+import CountryModal from '../CountryModal/CountryModal'
 import './CountriesTable.css';
 
 
@@ -15,7 +16,7 @@ class CountriesTable extends React.Component {
     renderCountriesRows = (arr) => {
         return arr.map(country => {
             return (
-                <tr key={country.alpha3Code}>
+                <tr onClick={() => this.props.ModalStateHandler(country)} key={country.alpha3Code}>
                     <td>{country.name}</td>
                     <td>{country.capital}</td>
                     <td>{country.region}</td>
@@ -47,7 +48,7 @@ class CountriesTable extends React.Component {
                         {!searchField.length ? this.renderCountriesRows(currentCountries) : this.renderCountriesRows(filteredCountry)}
                     </tbody>
                 </Table>
-                
+
                 {!searchField.length ? (
                     <div className="d-flex justify-content-center">
                         <Button className="Button-table" disabled={this.props.prevDisable} outline onClick={() => prevPageHandler(currentPage)}>Previous Page</Button>
@@ -64,6 +65,7 @@ class CountriesTable extends React.Component {
         return (
             <Fragment>
                 {!this.props.isPending ? this.renderTable() : <h2>Loading...</h2>}
+                <CountryModal />
             </Fragment>
         );
     }
@@ -86,7 +88,8 @@ const mapDispatchToProps = (dispatch) => {
         requestCountriesHandler: () => dispatch(requestCountries()),
         nextPageHandler: (num) => dispatch(nextPage(num)),
         prevPageHandler: (num) => dispatch(prevPage(num)),
-        searchFieldHandler: (e) => dispatch(setSearchField(e.target.value))
+        searchFieldHandler: (e) => dispatch(setSearchField(e.target.value)),
+        ModalStateHandler: (country) => dispatch(setModalState(country))
     }
 }
 

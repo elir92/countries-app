@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+
+.country-modal{
+    font-family: 'Questrial', sans-serif;
+}
+
+.card-title{
+    text-align: center;
+}
+
+.flag-img{
+    margin: auto;
+    width: 50%;
+}
