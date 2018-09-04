@@ -74,13 +74,13 @@ class CountriesTable extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        countries: state.countriesReducer.countries,
-        isPending: state.countriesReducer.isPending,
-        countriesPerPage: state.countriesReducer.countriesPerPage,
-        currentPage: state.countriesReducer.currentPage,
-        prevDisable: state.countriesReducer.prevDisable,
-        nextDisable: state.countriesReducer.nextDisable,
-        searchField: state.countriesReducer.searchField
+        countries: state.tableReducer.countries,
+        isPending: state.tableReducer.isPending,
+        countriesPerPage: state.tableReducer.countriesPerPage,
+        currentPage: state.tableReducer.currentPage,
+        prevDisable: state.tableReducer.prevDisable,
+        nextDisable: state.tableReducer.nextDisable,
+        searchField: state.tableReducer.searchField
     }
 }
 

@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
-import { countriesReducer } from './store/reducers/reducers';
+import { tableReducer } from './store/reducers/table';
 import registerServiceWorker from './registerServiceWorker';
 
 const middlewares = [thunk];
@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === `development`) {
     middlewares.push(logger);
 }
 
-const rootReducer = combineReducers({ countriesReducer });
+const rootReducer = combineReducers({ tableReducer });
 const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
