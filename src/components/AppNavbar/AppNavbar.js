@@ -18,8 +18,8 @@ class AppNavbar extends React.Component {
     render() {
         return (
             <Fragment>
-                <Navbar color="dark" dark expand="sm" className="mb-5 AppNavbar">
-                    <Container>
+                <Navbar color="dark" dark expand="sm" className="mb-5">
+                    <Container className="navbar-container">
                         <NavbarBrand href="/">Countries Application</NavbarBrand>
                         <NavbarToggler onClick={this.toggleHandler} />
                         <Collapse isOpen={this.state.isOpen} navbar>
@@ -29,12 +29,12 @@ class AppNavbar extends React.Component {
                                         Home
                                     </NavLink>
                                 </NavItem>
-                                <NavItem>
+                                <NavItem  >
                                     <NavLink tag={Link} to="/table">
                                         Table
                                     </NavLink>
-                                </NavItem>
-                                <NavItem>
+                                </NavItem  >
+                                <NavItem >
                                     <NavLink tag={Link} to="/flag-game">
                                         Flag Game
                                     </NavLink>
