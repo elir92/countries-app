@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { requestCountries, nextPage, prevPage, setSearchField, setModalState } from '../../store/actions/actions';
 import { paginate } from '../../utility';
 import { Table, Button } from 'reactstrap';
-import CountryModal from '../CountryModal/CountryModal'
+import CountryModal from '../../components/CountryModal/CountryModal';
 import Spinner from '../../components/Spinner/Spinner';
 import './CountriesTable.css';
 
@@ -74,13 +74,13 @@ class CountriesTable extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        countries: state.countriesReducer.countries,
-        isPending: state.countriesReducer.isPending,
-        countriesPerPage: state.countriesReducer.countriesPerPage,
-        currentPage: state.countriesReducer.currentPage,
-        prevDisable: state.countriesReducer.prevDisable,
-        nextDisable: state.countriesReducer.nextDisable,
-        searchField: state.countriesReducer.searchField
+        countries: state.tableReducer.countries,
+        isPending: state.tableReducer.isPending,
+        countriesPerPage: state.tableReducer.countriesPerPage,
+        currentPage: state.tableReducer.currentPage,
+        prevDisable: state.tableReducer.prevDisable,
+        nextDisable: state.tableReducer.nextDisable,
+        searchField: state.tableReducer.searchField
     }
 }
 

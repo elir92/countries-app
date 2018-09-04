@@ -32,8 +32,8 @@ class CountryModal extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        modal: state.countriesReducer.modal,
-        currentCountry: state.countriesReducer.currentCountry
+        modal: state.tableReducer.modal,
+        currentCountry: state.tableReducer.currentCountry
     }
 }
 

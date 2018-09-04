@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import Layout from './containers/Layout';
-import AppJumbotron from './components/AppJumbotron/AppJumbotron';
+import AppNavbar from './components/AppNavbar/AppNavbar';
 import CountriesTable from './containers/CountriesTable/CountriesTable';
+import FlagGame from './containers/FlagGame/FlagGame';
 
 class App extends Component {
   render() {
     return (
-      <Layout>
-        <AppJumbotron />
-        <Container>
-          <CountriesTable />
-        </Container>
-      </Layout>
+      <Router>
+        <Layout>
+          <AppNavbar />
+          <Container>
+            <Route path="/" exact component={CountriesTable} />
+            <Route path="/flag-game" component={FlagGame} />
+          </Container>
+        </Layout>
+      </Router>
     );
   }
 }
