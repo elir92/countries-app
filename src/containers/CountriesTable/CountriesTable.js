@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { requestCountries, nextPage, prevPage, setSearchField, setModalState } from '../../store/actions/actions';
 import { paginate } from '../../utility';
 import { Table, Button } from 'reactstrap';
-import CountryModal from '../CountryModal/CountryModal'
+import CountryModal from '../../components/CountryModal/CountryModal';
 import Spinner from '../../components/Spinner/Spinner';
 import './CountriesTable.css';
 
