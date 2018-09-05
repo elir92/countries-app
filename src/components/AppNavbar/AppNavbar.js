@@ -25,17 +25,17 @@ class AppNavbar extends React.Component {
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
-                                    <NavLink tag={Link} to="/">
+                                    <NavLink tag={Link} to={process.env.PUBLIC_URL + "/"}>
                                         Home
                                     </NavLink>
                                 </NavItem>
                                 <NavItem  >
-                                    <NavLink tag={Link} to="/table">
+                                    <NavLink tag={Link} to={process.env.PUBLIC_URL + "/table"}>
                                         Table
                                     </NavLink>
                                 </NavItem  >
                                 <NavItem >
-                                    <NavLink tag={Link} to="/flag-game">
+                                    <NavLink tag={Link} to={process.env.PUBLIC_URL + "/flag-game"}>
                                         Flag Game
                                     </NavLink>
                                 </NavItem>
