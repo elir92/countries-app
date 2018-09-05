@@ -20,7 +20,7 @@ class AppNavbar extends React.Component {
             <Fragment>
                 <Navbar color="dark" dark expand="sm" className="mb-5">
                     <Container className="navbar-container">
-                        <NavbarBrand href="/">Countries Application</NavbarBrand>
+                        <NavbarBrand href="">Countries Application</NavbarBrand>
                         <NavbarToggler onClick={this.toggleHandler} />
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
