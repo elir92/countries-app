@@ -1,7 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ### Currently under construction
+* Home page
+* Flag game page
 
 # Description
-Simple application based on React and Redux that fetching data from API and present it as countries into table.
-
+Countries Single Page Application based on React and Redux.
