@@ -6,8 +6,39 @@
 .Home-title{
     position: relative;
     animation-name: title;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
+}
+
+.details__headtitle{
+    margin-bottom: 15px;
+}
+
+.react-logo{
+    width: 240px;
+    position: relative;
+    animation-name: react-logo;
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+}
+
+
+@keyframes react-logo{
+    0%{left:-80px;}
+    100%{left:10px;}
+}
+
+.redux-logo{
+    width: 150px;
+    position: relative;
+    animation-name: redux-logo;
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+}
+
+@keyframes redux-logo{
+    0%{bottom:-80px;}
+    100%{bottom:10px;}
 }
 
 @keyframes title{
@@ -18,14 +49,24 @@
 .Home-logo {
     animation: Home-logo-spin infinite 20s linear;
     width: 250px;
-    margin-top: 5px;
+    margin-top: 20px;
+    margin-bottom: 5px;
   }
 
 
   @media screen and (max-width: 360px) {
     .Home-logo {
-        width: 200px;
+        width: 150px;
     }
+
+    .react-logo{
+        width: 140px;
+    }
+    
+    .redux-logo{
+        width: 96px;
+    }
+
   }
 
   @keyframes Home-logo-spin {
