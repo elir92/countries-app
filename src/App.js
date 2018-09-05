@@ -14,9 +14,9 @@ class App extends Component {
         <Layout>
           <AppNavbar />
           <Container>
-            <Route path="/" exact component={Home} />
-            <Route path="/table" component={CountriesTable} />
-            <Route path="/flag-game" component={FlagGame} />
+            <Route path={process.env.PUBLIC_URL + "/"} exact component={Home} />
+            <Route path={process.env.PUBLIC_URL + "/table"} component={CountriesTable} />
+            <Route path={process.env.PUBLIC_URL + "/flag-game"} component={FlagGame} />
           </Container>
         </Layout>
       </Router>
