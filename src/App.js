@@ -14,7 +14,7 @@ class App extends Component {
         <Layout>
           <AppNavbar />
           <Container>
-            <Route path="/" exact component={Home}  />
+            <Route path="/" exact component={Home} />
             <Route path="/table" component={CountriesTable} />
             <Route path="/flag-game" component={FlagGame} />
           </Container>

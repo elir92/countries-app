@@ -19,6 +19,7 @@ if (process.env.NODE_ENV === `development`) {
 
 const rootReducer = combineReducers({ tableReducer });
 const store = createStore(rootReducer, applyMiddleware(...middlewares));
+const app = <Provider store={store}><App /></Provider>;
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(app, document.getElementById('root'));
 registerServiceWorker();

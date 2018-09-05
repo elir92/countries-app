@@ -1,11 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand:500');
-
 .navbar-container{
     font-family: 'Quicksand', sans-serif;
 }
 
-/* @media (min-width: 576px){
-    .jumbo-fix {
-        padding: 2rem 1rem;
-    }
-} */
