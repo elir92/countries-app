@@ -5,4 +5,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Flag game page
 
 # Description
-Countries Single Page Application based on React and Redux and Reactstrap.
+Countries Single Page Application based on React, Redux and Reactstrap.
