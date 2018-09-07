@@ -1,8 +1,12 @@
 {
-  "main.css": "static/css/main.97ac4413.css",
-  "main.css.map": "static/css/main.97ac4413.css.map",
-  "main.js": "static/js/main.70063eea.js",
-  "main.js.map": "static/js/main.70063eea.js.map",
+  "main.css": "static/css/main.33a7b2a4.css",
+  "main.css.map": "static/css/main.33a7b2a4.css.map",
+  "main.js": "static/js/main.1d2a3edb.js",
+  "main.js.map": "static/js/main.1d2a3edb.js.map",
+  "static/js/0.d21f91e8.chunk.js": "static/js/0.d21f91e8.chunk.js",
+  "static/js/0.d21f91e8.chunk.js.map": "static/js/0.d21f91e8.chunk.js.map",
+  "static/js/1.919e8fc6.chunk.js": "static/js/1.919e8fc6.chunk.js",
+  "static/js/1.919e8fc6.chunk.js.map": "static/js/1.919e8fc6.chunk.js.map",
   "static\\media\\globe.svg": "static/media/globe.de21dbaf.svg",
   "static\\media\\react-logo.svg": "static/media/react-logo.68fca901.svg",
   "static\\media\\redux-logo.svg": "static/media/redux-logo.4e231cdc.svg"
