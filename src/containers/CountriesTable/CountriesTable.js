@@ -19,8 +19,8 @@ class CountriesTable extends React.Component {
             return (
                 <tr onClick={() => this.props.ModalStateHandler(country)} key={country.alpha3Code}>
                     <td>{country.name}</td>
-                    <td>{country.capital}</td>
-                    <td>{country.region}</td>
+                    <td>{country.capital !== "" ? country.capital : <b>Unknown</b>}</td>
+                    <td>{country.region !== "" ? country.region : <b>Unknown</b>}</td>
                 </tr>
             );
         });

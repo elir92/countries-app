@@ -16,7 +16,7 @@ class CountryModal extends React.Component {
                     <Card className="country-card">
                         <CardImg src={currentCountry.flag} alt="Card image cap" className="flag-img" />
                         <CardBody>
-                            <CardTitle className="card-title">Located in {currentCountry.region !== "" ? currentCountry.region : `unknown`}</CardTitle>
+                            <CardTitle className="card-title">Located in {currentCountry.region !== "" ? currentCountry.region : `Unknown`}</CardTitle>
                             <CardText>
                                 The capital city is {currentCountry.capital !== "" ? currentCountry.capital : `unknown`}. <br />
                                 Population number is {currentCountry.population}.  <br />
