@@ -54,7 +54,7 @@
   }
 
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 420px) {
     .Home-logo {
         width: 150px;
         margin-bottom: 25px;
@@ -66,6 +66,23 @@
     
     .redux-logo{
         width: 96px;
+        top: -3px;
+    }
+
+  }
+
+  @media screen and (max-width: 256px) {
+    .Home-logo {
+        width: 130px;
+        margin-bottom: 25px;
+    }
+
+    .react-logo{
+        width: 120px;
+    }
+    
+    .redux-logo{
+        width: 90px;
     }
 
   }
