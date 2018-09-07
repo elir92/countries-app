@@ -62,11 +62,11 @@
 
     .react-logo{
         width: 140px;
+        margin-bottom: 17px;
     }
     
     .redux-logo{
         width: 96px;
-        top: -3px;
     }
 
   }
