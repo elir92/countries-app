@@ -3,10 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import Layout from './containers/Layout';
 import AppNavbar from './components/AppNavbar/AppNavbar';
+import Footer from './components/Footer/Footer';
 import Home from './containers/Home/Home';
 import asyncComponent from './hoc/asyncComponent/asyncComponent';
 
-const asyncTable = asyncComponent(()=> import('./containers/CountriesTable/CountriesTable'));
+const asyncTable = asyncComponent(() => import('./containers/CountriesTable/CountriesTable'));
 const asyncFlagGame = asyncComponent(() => import('./containers/FlagGame/FlagGame'));
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
               <Route path={process.env.PUBLIC_URL + "/flag-game"} component={asyncFlagGame} />
             </Switch>
           </Container>
+          <Footer />
         </Layout>
       </Router>
     );

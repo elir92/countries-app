@@ -1,0 +1,20 @@
+.Footer{
+    text-align: center;
+    position: fixed;
+    height: 60px;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    background-color:#343a40;
+}
+
+.fab{
+    font-size: 30px;
+    margin-left: 15px;
+    line-height: 2;
+}
+
+.Footer a {
+    text-decoration: none;
+    color: #fff;
+}
