@@ -9,6 +9,8 @@ export const requestCountries = () => (dispatch) => {
         .catch(error => dispatch({ type: actionType.REQUEST_COUNTRIES_FAILED, payload: error }));
 };
 
+// Country Table Actions...
+
 export const nextPage = (num) => ({
     type: actionType.NEXT_PAGE,
     payload: num + 1
@@ -32,3 +34,7 @@ export const setModalState = (obj) => ({
 export const modalToggle = () => ({
     type: actionType.MODAL_TOGGLE
 });
+
+//---------------------------------------------------------
+
+// Flag Game Actions......

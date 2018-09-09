@@ -11,7 +11,9 @@ import './CountriesTable.css';
 class CountriesTable extends React.Component {
 
     componentDidMount() {
-        this.props.requestCountriesHandler();
+        if (!this.props.countries.length) {
+            this.props.requestCountriesHandler();
+        }
     }
 
     renderCountriesRows = (arr) => {
