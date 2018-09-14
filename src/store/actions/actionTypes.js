@@ -13,3 +13,5 @@ export const SET_MODAL_STATE = 'SET_MODAL_STATE';
 export const MODAL_TOGGLE = 'MODAL_TOGGLE';
 
 //------------------------------------------------------------------------
+
+export const START_GAME = 'START_GAME';
