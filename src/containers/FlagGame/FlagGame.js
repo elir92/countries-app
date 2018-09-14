@@ -4,7 +4,7 @@ import { requestCountries, startGame } from '../../store/actions/actions';
 import { Button } from 'reactstrap';
 import globe from '../../globe.svg';
 import './FlagGame.css';
-import StageGame from '../../components/StageGame/StageGame';
+import QuizGame from '../../components/QuizGame/QuizGame';
 
 class FlagGame extends Component {
 
@@ -26,7 +26,7 @@ class FlagGame extends Component {
 
     renderGame = () => {
         return (
-            !this.props.gameStatus ? this.renderIntro() : <StageGame />
+            !this.props.gameStatus ? this.renderIntro() : <QuizGame />
         )
     }
 

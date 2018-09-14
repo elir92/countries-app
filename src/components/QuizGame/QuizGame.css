@@ -1,0 +1,13 @@
+.Flag-Img{
+    width: 80%;
+}
+
+.Restart-Button{
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 600px) {
+    .Restart-Button{
+        text-align: center;
+    }
+  }

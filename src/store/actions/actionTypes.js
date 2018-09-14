@@ -16,3 +16,4 @@ export const MODAL_TOGGLE = 'MODAL_TOGGLE';
 
 export const START_GAME = 'START_GAME';
 export const RESTART_GAME = 'RESTART_GAME';
+export const RIGHT_ANSWER = 'RIGHT_ANSWER';

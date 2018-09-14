@@ -46,3 +46,8 @@ export const startGame = () => ({
 export const restartGame = () => ({
     type: actionType.RESTART_GAME
 });
+
+export const rightAnswer = (num) => ({
+    type: actionType.RIGHT_ANSWER,
+    payload: num + 1
+});
