@@ -42,3 +42,7 @@ export const modalToggle = () => ({
 export const startGame = () => ({
     type: actionType.START_GAME
 });
+
+export const restartGame = () => ({
+    type: actionType.RESTART_GAME
+});
