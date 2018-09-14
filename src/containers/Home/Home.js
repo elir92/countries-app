@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Home.css';
 import globe from '../../globe.svg';
-import reactLogo from '../../react-logo.svg';
-import reduxLogo from '../../redux-logo.svg';
+import reactLogo from '../../react-black.svg';
+import reduxLogo from '../../redux-black.svg';
 
 class Home extends Component {
     render() {
