@@ -14,11 +14,6 @@ class StageGame extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        gameStatus: state.gameReducer.gameStatus
-    }
-}
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -26,4 +21,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(StageGame);
+export default connect(null, mapDispatchToProps)(StageGame);
