@@ -38,3 +38,7 @@ export const modalToggle = () => ({
 //---------------------------------------------------------
 
 // Flag Game Actions......
+
+export const startGame = () => ({
+    type: actionType.START_GAME
+});
