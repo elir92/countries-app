@@ -6,7 +6,8 @@ const initialState = {
     countries: [],
     error: null,
     gameStatus: false,
-    game: []
+    game: [],
+    currentStage: 0
 }
 
 const buildGame = (arr) => {
@@ -37,7 +38,13 @@ const startGame = (state) => {
 }
 
 const restartGame = (state) => {
-    return updateObject(state, { gameStatus: false, game: [] });
+    return updateObject(state, { gameStatus: false, game: [], currentStage: 0 });
+}
+
+const rightAnswer = (state, action) => {
+    if (action.payload <= 10) {
+        return updateObject(state, { currentStage: action.payload })
+    }
 }
 
 export const gameReducer = (state = initialState, action) => {
@@ -47,6 +54,7 @@ export const gameReducer = (state = initialState, action) => {
         case actionType.REQUEST_COUNTRIES_FAILED: return requestCountriesFail(state, action);
         case actionType.START_GAME: return startGame(state);
         case actionType.RESTART_GAME: return restartGame(state);
+        case actionType.RIGHT_ANSWER: return rightAnswer(state, action);
         default: return state;
     }
 };
