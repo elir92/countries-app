@@ -13,7 +13,7 @@ class QuizGame extends Component {
 
 
     renderGame = () => {
-        const { game, currentStage, randomFlag } = this.props;
+        const { game, currentStage, randomFlag,restartGameHandler } = this.props;
         const answersList = game[currentStage].map(country => {
             return <li key={country.alpha3Code}>
                 <Button onClick={() => this.answerHandler(country.name, randomFlag.name)} color="secondary" block>{country.name}</Button>
@@ -30,6 +30,9 @@ class QuizGame extends Component {
                 </Col>
                 <Col sm="12" md="6" className="Answer-Col">
                     <div className="Stage-Avatar"><span>{currentStage + 1}</span></div>
+                    <div className="Restart-Button">
+                        <Button onClick={restartGameHandler} color="secondary" outline>Restart</Button>
+                    </div>
                     <ul>
                         {answersList}
                     </ul>
@@ -58,9 +61,6 @@ class QuizGame extends Component {
         return (
             <Fragment>
                 {this.props.currentStage !== 10 ? this.renderGame() : <h1>DONE!</h1>}
-                <div className="Restart-Button">
-                    <Button onClick={this.props.restartGameHandler} outline color="secondary" size="lg">Restart Game</Button>
-                </div>
             </Fragment>
         );
     }

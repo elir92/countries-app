@@ -12,10 +12,7 @@
     text-align: center       
 }
 
-.Restart-Button{
-    margin-top: 50px;
-    margin-left: 50px;
-}
+
 
 .Stage-Avatar{
     width: 50px;
@@ -25,6 +22,8 @@
     text-align: center;
     display: inline-block;
     padding: 8px;
+    left: 17px;
+    position: relative;
 }
 
 .Stage-Avatar span{
@@ -35,6 +34,7 @@
 
 .Answer-Col{
     text-align: center;
+    position: relative;
 }
 
 .Answer-Col ul{
@@ -51,6 +51,14 @@
     margin-left: 51px;
 }
 
+.Restart-Button{
+    /* margin-top: 50px;
+    margin-left: 50px; */
+    display: inline-block;
+    position: absolute;
+    right: 28px;
+}
+
 @media screen and (max-width: 600px) {
     .Flag-Img{
         width: 68%;
@@ -58,8 +66,7 @@
     }
    
     .Restart-Button{
-        text-align: center;
-        margin: 20px;
+       
     }
     .Answer-Col{
         text-align: center;
@@ -69,6 +76,9 @@
         text-align: center;
         margin-top: 35px;
         padding: 0;
+    }
+    .Stage-Avatar{
+       left: 4px;
     }
     .Wrong-Alert{
         width: 314px;
