@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { requestCountries, nextPage, prevPage, setSearchField, setModalState } from '../../store/actions/actions';
-import { paginate } from '../../utility';
+import { requestCountries, setSearchField, setModalState } from '../../store/actions/actions';
 import { Table, Button } from 'reactstrap';
 import CountryModal from '../../components/CountryModal/CountryModal';
 import Spinner from '../../components/Spinner/Spinner';
@@ -9,6 +8,10 @@ import './CountriesTable.css';
 
 
 class CountriesTable extends React.Component {
+
+    state = {
+        count: 10
+    }
 
     componentDidMount() {
         if (!this.props.countries.length) {
@@ -28,10 +31,17 @@ class CountriesTable extends React.Component {
         });
     }
 
+    loadMoreHandler = (arr) => {
+        if (arr.length <= this.props.countries.length) {
+            let loadMore = arr.length + 20;
+            this.setState({ count: loadMore });
+        }
+    }
+
 
     renderTable = () => {
-        const { countries, currentPage, countriesPerPage, nextPageHandler, prevPageHandler, searchField, searchFieldHandler } = this.props;
-        const currentCountries = paginate(countries, currentPage, countriesPerPage);
+        const { countries, searchField, searchFieldHandler } = this.props;
+        const currentCountries = countries.slice(0, this.state.count);
         const filteredCountry = countries.filter(country => {
             return country.name.toLowerCase().includes(searchField.toLowerCase());
         });
@@ -54,8 +64,7 @@ class CountriesTable extends React.Component {
 
                 {!searchField.length ? (
                     <div className="d-flex justify-content-center">
-                        <Button className="Button-table" disabled={this.props.prevDisable} outline onClick={() => prevPageHandler(currentPage)}>Previous Page</Button>
-                        <Button className="Button-table" disabled={this.props.nextDisable} outline onClick={() => nextPageHandler(currentPage)}>Next Page</Button>
+                        <Button className="Button-table" onClick={() => this.loadMoreHandler(currentCountries)}>Load More</Button>
                     </div>
                 ) : null}
 
@@ -78,10 +87,6 @@ const mapStateToProps = state => {
     return {
         countries: state.tableReducer.countries,
         isPending: state.tableReducer.isPending,
-        countriesPerPage: state.tableReducer.countriesPerPage,
-        currentPage: state.tableReducer.currentPage,
-        prevDisable: state.tableReducer.prevDisable,
-        nextDisable: state.tableReducer.nextDisable,
         searchField: state.tableReducer.searchField
     }
 }
@@ -89,8 +94,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
     return {
         requestCountriesHandler: () => dispatch(requestCountries()),
-        nextPageHandler: (num) => dispatch(nextPage(num)),
-        prevPageHandler: (num) => dispatch(prevPage(num)),
         searchFieldHandler: (e) => dispatch(setSearchField(e.target.value)),
         ModalStateHandler: (country) => dispatch(setModalState(country))
     }

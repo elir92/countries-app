@@ -19,14 +19,11 @@ class QuizGame extends Component {
         if (ans) {
             this.setState({ wrongAnswer: false });
             this.props.rightAnswerHandler(this.props.currentStage);
-
         }
         if (!ans) {
             this.setState({ wrongAnswer: true });
         }
     }
-
-
 
     renderGame = () => {
         const { game, currentStage, randomFlag, restartGameHandler } = this.props;
