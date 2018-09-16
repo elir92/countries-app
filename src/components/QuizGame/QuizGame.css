@@ -1,13 +1,62 @@
 .Flag-Img{
     width: 80%;
+
+}
+
+.Flag-Col{
+    text-align: center       
 }
 
 .Restart-Button{
     margin-top: 50px;
+    margin-left: 50px;
+}
+
+.Stage-Avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #343a40;
+    text-align: center;
+    display: inline-block;
+    padding: 8px;
+}
+
+.Stage-Avatar span{
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+.Answer-Col{
+    text-align: center;
+}
+
+.Answer-Col ul{
+    margin-top: 15px;
+}
+
+.Answer-Col ul > li{
+    list-style: none;
+    margin: 8px;
 }
 
 @media screen and (max-width: 600px) {
+    .Flag-Img{
+        height: 150px;
+    }
+   
     .Restart-Button{
         text-align: center;
+        margin: 20px;
+    }
+    .Answer-Col{
+        text-align: center;
+        margin-top: 35px;
+    }
+    .Answer-Col ul{
+        text-align: center;
+        margin-top: 35px;
+        padding: 0;
     }
   }
