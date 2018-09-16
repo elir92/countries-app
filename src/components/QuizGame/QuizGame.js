@@ -4,6 +4,7 @@ import { restartGame, rightAnswer } from '../../store/actions/actions';
 import { checkAnswer } from '../../utility';
 import { Button, Row, Col, Alert } from 'reactstrap';
 import './QuizGame.css';
+import DoneGame from './DoneGame';
 
 class QuizGame extends Component {
 
@@ -12,8 +13,23 @@ class QuizGame extends Component {
     }
 
 
+    answerHandler = (answer, flag) => {
+        //Check if its match to the flag
+        const ans = checkAnswer(answer, flag);
+        if (ans) {
+            this.setState({ wrongAnswer: false });
+            this.props.rightAnswerHandler(this.props.currentStage);
+
+        }
+        if (!ans) {
+            this.setState({ wrongAnswer: true });
+        }
+    }
+
+
+
     renderGame = () => {
-        const { game, currentStage, randomFlag,restartGameHandler } = this.props;
+        const { game, currentStage, randomFlag, restartGameHandler } = this.props;
         const answersList = game[currentStage].map(country => {
             return <li key={country.alpha3Code}>
                 <Button onClick={() => this.answerHandler(country.name, randomFlag.name)} color="secondary" block>{country.name}</Button>
@@ -21,7 +37,6 @@ class QuizGame extends Component {
         });
 
         const wrongAnswer = this.state.wrongAnswer ? <Alert className="Wrong-Alert" color="danger">Wrong! Try Again</Alert> : null;
-
 
         return (
             <Row>
@@ -42,25 +57,10 @@ class QuizGame extends Component {
         );
     }
 
-
-
-    answerHandler = (answer, flag) => {
-        //Check if its match to the flag
-        const ans = checkAnswer(answer, flag);
-        if (ans) {
-            this.setState({ wrongAnswer: false });
-            this.props.rightAnswerHandler(this.props.currentStage);
-
-        }
-        if (!ans) {
-            this.setState({ wrongAnswer: true });
-        }
-    }
-
     render() {
         return (
             <Fragment>
-                {this.props.currentStage !== 10 ? this.renderGame() : <h1>DONE!</h1>}
+                {this.props.currentStage !== 10 ? this.renderGame() : <DoneGame restart={this.props.restartGameHandler} />}
             </Fragment>
         );
     }

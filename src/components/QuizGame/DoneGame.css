@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
+
+.Done{
+    text-align: center;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.Done h1{
+    font-size: 6.5rem;
+}
