@@ -6,8 +6,6 @@ export const REQUEST_COUNTRIES_FAILED = 'REQUEST_COUNTRIES_FAILED';
 
 // Country Table Actions
 
-export const NEXT_PAGE = 'NEXT_PAGE';
-export const PREV_PAGE = 'PREV_PAGE';
 export const CHANGE_SEARCH_FIELD = 'CHANGE_SEARCH_FIELD';
 export const SET_MODAL_STATE = 'SET_MODAL_STATE';
 export const MODAL_TOGGLE = 'MODAL_TOGGLE';
