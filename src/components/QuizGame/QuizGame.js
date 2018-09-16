@@ -27,7 +27,6 @@ class QuizGame extends Component {
                     <ul>
                         {answersList}
                     </ul>
-
                 </Col>
             </Row>
         );
