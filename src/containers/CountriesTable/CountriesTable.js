@@ -10,7 +10,7 @@ import './CountriesTable.css';
 class CountriesTable extends React.Component {
 
     state = {
-        count: 10
+        count: 20
     }
 
     componentDidMount() {
