@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { requestCountries, startGame } from '../../store/actions/actions';
 import { Button } from 'reactstrap';
-import globe from '../../globe.svg';
+import globe from '../../assets/globe.svg';
 import './FlagGame.css';
 import QuizGame from '../../components/QuizGame/QuizGame';
 
