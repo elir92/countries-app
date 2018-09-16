@@ -1,5 +1,11 @@
 .Flag-Img{
-    width: 80%;
+    width: 89%;
+    height: 250px;
+    border:1px solid gray;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin: auto;
 }
 
 .Flag-Col{
@@ -42,6 +48,7 @@
 
 @media screen and (max-width: 600px) {
     .Flag-Img{
+        width: 68%;
         height: 150px;
     }
    

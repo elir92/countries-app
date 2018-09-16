@@ -20,7 +20,8 @@ class QuizGame extends Component {
         return (
             <Row>
                 <Col sm="12" md="6" className="Flag-Col">
-                    <img className="Flag-Img" src={randFlag.flag} alt="flag" />
+                    {/* <img className="Flag-Img" src={randFlag.flag} alt="flag" /> */}
+                    <div className="Flag-Img" style={{backgroundImage: `url(${randFlag.flag})`}}></div>
                 </Col>
                 <Col sm="12" md="6" className="Answer-Col">
                     <div className="Stage-Avatar"><span>{currentStage + 1}</span></div>
