@@ -46,6 +46,11 @@
     margin: 8px;
 }
 
+.Wrong-Alert{
+    width: 480px;
+    margin-left: 51px;
+}
+
 @media screen and (max-width: 600px) {
     .Flag-Img{
         width: 68%;
@@ -64,5 +69,9 @@
         text-align: center;
         margin-top: 35px;
         padding: 0;
+    }
+    .Wrong-Alert{
+        width: 314px;
+        margin: auto;
     }
   }

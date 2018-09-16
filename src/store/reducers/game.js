@@ -7,7 +7,8 @@ const initialState = {
     error: null,
     gameStatus: false,
     game: [],
-    currentStage: 0
+    currentStage: 0,
+    randomFlag: ''
 }
 
 const buildGame = (arr) => {
@@ -17,6 +18,12 @@ const buildGame = (arr) => {
         game.push(stage);
     }
     return game;
+}
+
+const randFlag = (arr, stage) => {
+    if (stage < 10) {
+        return arr[stage][Math.floor(Math.random() * arr[stage].length)];
+    }
 }
 
 const requestCountriesPending = (state) => {
@@ -34,7 +41,7 @@ const requestCountriesFail = (state, action) => {
 const startGame = (state) => {
     const countriesForGame = [...state.countries];
     const initiateGame = buildGame(countriesForGame);
-    return updateObject(state, { gameStatus: true, game: initiateGame });
+    return updateObject(state, { gameStatus: true, game: initiateGame, randomFlag: randFlag(initiateGame, state.currentStage) });
 }
 
 const restartGame = (state) => {
@@ -43,7 +50,7 @@ const restartGame = (state) => {
 
 const rightAnswer = (state, action) => {
     if (action.payload <= 10) {
-        return updateObject(state, { currentStage: action.payload })
+        return updateObject(state, { currentStage: action.payload, randomFlag: randFlag(state.game, action.payload) });
     }
 }
 
