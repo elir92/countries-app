@@ -2,9 +2,13 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { restartGame, rightAnswer } from '../../../store/actions/actions';
 import { checkAnswer } from '../../../utility';
-import { Button, Row, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import './QuizGame.css';
 import DoneGame from '../../../components/DoneGame/DoneGame';
+import StageAvatar from '../../../components/StageAvatar/StageAvatar';
+import RestartButton from '../../../components/RestartButton/RestartButton';
+import AnswerList from '../../../components/AnswerList/AnswerList';
+import RandomFlag from '../../../components/RandomFlag/RandomFlag';
 
 class QuizGame extends Component {
 
@@ -28,25 +32,21 @@ class QuizGame extends Component {
 
     renderGame = () => {
         const { game, currentStage, randomFlag, restartGameHandler } = this.props;
-        const answersList = game[currentStage].map(country => {
-            return <li key={country.alpha3Code}>
-                <Button className="Answer-Button" onClick={() => this.answerHandler(country.name, randomFlag.name, country.alpha3Code)} color="secondary">{country.name}</Button>
-                {this.state.wrongId === country.alpha3Code ? <i className="far fa-times-circle wrong-ans"></i> : null}
-            </li>;
-        });
+
         return (
             <Row>
                 <Col sm="12" md="6" className="Flag-Col">
-                    <div className="Flag-Img" style={{ backgroundImage: `url(${randomFlag.flag})` }}></div>
+                    <RandomFlag flag={randomFlag.flag} />
                 </Col>
                 <Col sm="12" md="6" className="Answer-Col">
-                    <div className="Stage-Avatar"><span>{currentStage + 1}</span></div>
-                    <div className="Restart-Button">
-                        <Button onClick={restartGameHandler} color="secondary" outline>Restart</Button>
-                    </div>
-                    <ul>
-                        {answersList}
-                    </ul>
+                    <StageAvatar stage={currentStage + 1} />
+                    <RestartButton reset={restartGameHandler} />
+                    <AnswerList
+                        game={game}
+                        stage={currentStage}
+                        flag={randomFlag}
+                        click={this.answerHandler}
+                        id={this.state.wrongId} />
                 </Col>
             </Row>
         );
