@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { requestCountries, setSearchField, setModalState } from '../../store/actions/actions';
 import { Table, Button } from 'reactstrap';
-import CountryModal from '../../components/CountryModal/CountryModal';
+import CountryModal from './CountryModal/CountryModal';
 import Spinner from '../../components/Spinner/Spinner';
 import './CountriesTable.css';
 

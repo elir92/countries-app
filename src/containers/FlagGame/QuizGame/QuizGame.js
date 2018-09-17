@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { restartGame, rightAnswer } from '../../store/actions/actions';
-import { checkAnswer } from '../../utility';
+import { restartGame, rightAnswer } from '../../../store/actions/actions';
+import { checkAnswer } from '../../../utility';
 import { Button, Row, Col } from 'reactstrap';
 import './QuizGame.css';
-import DoneGame from './DoneGame';
+import DoneGame from '../../../components/DoneGame/DoneGame';
 
 class QuizGame extends Component {
 

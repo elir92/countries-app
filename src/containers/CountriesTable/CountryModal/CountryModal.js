@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { modalToggle } from '../../store/actions/actions';
+import { modalToggle } from '../../../store/actions/actions';
 import { Modal, ModalHeader, ModalBody, Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 import './CountryModal.css';
 

@@ -4,7 +4,7 @@ import { requestCountries, startGame } from '../../store/actions/actions';
 import { Button } from 'reactstrap';
 import globe from '../../assets/globe.svg';
 import './FlagGame.css';
-import QuizGame from '../../components/QuizGame/QuizGame';
+import QuizGame from './QuizGame/QuizGame';
 
 class FlagGame extends Component {
 
