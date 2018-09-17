@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { restartGame, rightAnswer } from '../../store/actions/actions';
 import { checkAnswer } from '../../utility';
-import { Button, Row, Col, Alert } from 'reactstrap';
+import { Button, Row, Col } from 'reactstrap';
 import './QuizGame.css';
 import DoneGame from './DoneGame';
 
@@ -10,10 +10,11 @@ class QuizGame extends Component {
 
     state = {
         wrongAnswer: false,
+        wrongId: ''
     }
 
 
-    answerHandler = (answer, flag) => {
+    answerHandler = (answer, flag, id) => {
         //Check if its match to the flag
         const ans = checkAnswer(answer, flag);
         if (ans) {
@@ -21,7 +22,7 @@ class QuizGame extends Component {
             this.props.rightAnswerHandler(this.props.currentStage);
         }
         if (!ans) {
-            this.setState({ wrongAnswer: true });
+            this.setState({ wrongAnswer: true, wrongId: id });
         }
     }
 
@@ -29,12 +30,10 @@ class QuizGame extends Component {
         const { game, currentStage, randomFlag, restartGameHandler } = this.props;
         const answersList = game[currentStage].map(country => {
             return <li key={country.alpha3Code}>
-                <Button onClick={() => this.answerHandler(country.name, randomFlag.name)} color="secondary" block>{country.name}</Button>
+                <Button className="Answer-Button" onClick={() => this.answerHandler(country.name, randomFlag.name, country.alpha3Code)} color="secondary">{country.name}</Button>
+                {this.state.wrongId === country.alpha3Code ? <i id={country.alpha3Code} className="far fa-times-circle wrong-ans"></i> : null}
             </li>;
         });
-
-        const wrongAnswer = this.state.wrongAnswer ? <Alert className="Wrong-Alert" color="danger">Wrong! Try Again</Alert> : null;
-
         return (
             <Row>
                 <Col sm="12" md="6" className="Flag-Col">
@@ -48,7 +47,6 @@ class QuizGame extends Component {
                     <ul>
                         {answersList}
                     </ul>
-                    {wrongAnswer}
                 </Col>
             </Row>
         );

@@ -44,16 +44,24 @@
 .Answer-Col ul > li{
     list-style: none;
     margin: 8px;
+    position: relative;
 }
 
-.Wrong-Alert{
-    width: 480px;
-    margin-left: 51px;
+
+.Answer-Button{
+    width: 80%;
 }
 
+
+.wrong-ans{
+    font-size: 30px;
+    color: #dd3636;
+    position: relative;
+    top: 7px;
+    left: 7px;
+    
+}
 .Restart-Button{
-    /* margin-top: 50px;
-    margin-left: 50px; */
     display: inline-block;
     position: absolute;
     right: 28px;
