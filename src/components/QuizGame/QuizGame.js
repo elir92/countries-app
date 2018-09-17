@@ -31,7 +31,7 @@ class QuizGame extends Component {
         const answersList = game[currentStage].map(country => {
             return <li key={country.alpha3Code}>
                 <Button className="Answer-Button" onClick={() => this.answerHandler(country.name, randomFlag.name, country.alpha3Code)} color="secondary">{country.name}</Button>
-                {this.state.wrongId === country.alpha3Code ? <i id={country.alpha3Code} className="far fa-times-circle wrong-ans"></i> : null}
+                {this.state.wrongId === country.alpha3Code ? <i className="far fa-times-circle wrong-ans"></i> : null}
             </li>;
         });
         return (
