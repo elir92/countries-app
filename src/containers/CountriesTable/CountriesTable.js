@@ -10,14 +10,52 @@ import './CountriesTable.css';
 class CountriesTable extends React.Component {
 
     state = {
-        count: 10
+        count: 10,
+        showButton: true
     }
 
     componentDidMount() {
         if (!this.props.countries.length) {
             this.props.requestCountriesHandler();
         }
+
+        window.addEventListener("scroll", this.handleScroll);
     }
+
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.handleScroll);
+    }
+
+    isBottom(el) {
+        return el.getBoundingClientRect().bottom <= window.innerHeight;
+    }
+
+    handleScroll = () => {
+        const wrappedElement = document.getElementById('scrolledTable');
+        if (this.isBottom(wrappedElement)) {
+            this.loadMoreHandler();
+        }
+    }
+
+    loadMoreHandler = () => {
+        if (this.state.count !== this.props.countries.length) {
+            this.setState((prevState, props) => {
+                return {
+                    count: prevState.count + 20,
+                }
+            });
+        }
+    }
+
+    loadMoreButton = () => {
+        this.setState((prevState, props) => {
+            return {
+                count: prevState.count + 20,
+                showButton: false
+            }
+        });
+    }
+
 
     renderCountriesRows = (arr) => {
         return arr.map(country => {
@@ -31,13 +69,6 @@ class CountriesTable extends React.Component {
         });
     }
 
-    loadMoreHandler = (arr) => {
-        if (arr.length <= this.props.countries.length) {
-            let loadMore = arr.length + 20;
-            this.setState({ count: loadMore });
-        }
-    }
-
 
     renderTable = () => {
         const { countries, searchField, searchFieldHandler } = this.props;
@@ -47,7 +78,7 @@ class CountriesTable extends React.Component {
         });
 
         return (
-            <Fragment>
+            <div id="scrolledTable">
                 <label>Search</label><input onChange={searchFieldHandler} type="text" />
                 <Table className="Table" striped bordered responsive>
                     <thead className="Table-thead" >
@@ -61,14 +92,12 @@ class CountriesTable extends React.Component {
                         {!searchField.length ? this.renderCountriesRows(currentCountries) : this.renderCountriesRows(filteredCountry)}
                     </tbody>
                 </Table>
-
                 {!searchField.length ? (
                     <div className="d-flex justify-content-center">
-                        <Button className="Button-table" onClick={() => this.loadMoreHandler(currentCountries)}>Load More</Button>
+                        {!this.state.showButton || this.state.count > 10 ?  null : <Button className="Button-table" onClick={() => this.loadMoreButton()}>Load More</Button>}
                     </div>
                 ) : null}
-
-            </Fragment>
+            </div>
         )
     }
 
