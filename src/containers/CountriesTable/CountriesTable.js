@@ -1,9 +1,14 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { requestCountries, setSearchField, setModalState } from '../../store/actions/actions';
-import { Table, Button } from 'reactstrap';
+import { Table } from 'reactstrap';
+import TableHead from '../../components/TableHead/TableHead';
+import TableBody from '../../components/TableBody/TableBody';
+import CountriesRows from '../../components/CountriesRows/CountriesRows';
 import CountryModal from './CountryModal/CountryModal';
 import Spinner from '../../components/Spinner/Spinner';
+import LoadButton from '../../components/LoadButton/LoadButton';
+import SearchInput from '../../components/SearchInput/SearchInput';
 import './CountriesTable.css';
 
 
@@ -56,48 +61,24 @@ class CountriesTable extends React.Component {
         });
     }
 
-
-    renderCountriesRows = (arr) => {
-        return arr.map(country => {
-            return (
-                <tr onClick={() => this.props.ModalStateHandler(country)} key={country.alpha3Code}>
-                    <td>{country.name}</td>
-                    <td>{country.capital !== "" ? country.capital : <b>Unknown</b>}</td>
-                    <td>{country.region !== "" ? country.region : <b>Unknown</b>}</td>
-                </tr>
-            );
-        });
-    }
-
-
     renderTable = () => {
-        const { countries, searchField, searchFieldHandler } = this.props;
+        const { countries, searchField, searchFieldHandler, ModalStateHandler } = this.props;
         const currentCountries = countries.slice(0, this.state.count);
         const filteredCountry = countries.filter(country => {
             return country.name.toLowerCase().includes(searchField.toLowerCase());
         });
 
         return (
-            <div id="scrolledTable">
-                <label>Search</label><input onChange={searchFieldHandler} type="text" />
-                <Table className="Table" striped bordered responsive>
-                    <thead className="Table-thead" >
-                        <tr>
-                            <th>Name</th>
-                            <th>Capital</th>
-                            <th>Region</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {!searchField.length ? this.renderCountriesRows(currentCountries) : this.renderCountriesRows(filteredCountry)}
-                    </tbody>
+            <Fragment>
+                <SearchInput search={searchFieldHandler} />
+                <Table id="scrolledTable" className="Table" striped bordered responsive>
+                    <TableHead />
+                    <TableBody>
+                        {!searchField.length ? <CountriesRows arr={currentCountries} modal={ModalStateHandler} /> : <CountriesRows arr={filteredCountry} modal={ModalStateHandler} />}
+                    </TableBody>
                 </Table>
-                {!searchField.length ? (
-                    <div className="d-flex justify-content-center">
-                        {!this.state.showButton || this.state.count > 10 ?  null : <Button className="Button-table" onClick={() => this.loadMoreButton()}>Load More</Button>}
-                    </div>
-                ) : null}
-            </div>
+                {!searchField.length ? <LoadButton showButton={this.state.showButton} count={this.state.count} load={this.loadMoreButton} /> : null}
+            </Fragment>
         )
     }
 
