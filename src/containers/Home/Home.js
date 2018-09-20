@@ -11,8 +11,8 @@ class Home extends Component {
                 <h1 className="Home-title">Welcome</h1>
                 <img src={globe} className="Home-logo" alt="globe" />
                 <h4 className="details__headtitle">Based on</h4>
-                <a target="_blank" rel="noopener noreferrer" href="https://reactjs.org/"><img className="react-logo" src={reactLogo} alt="logo" /></a>
-                <a target="_blank" rel="noopener noreferrer" href="https://redux.js.org/"><img className="redux-logo" src={reduxLogo} alt="logo" /></a>
+                <a href="https://reactjs.org/"><img className="react-logo" src={reactLogo} alt="logo" /></a>
+                <a href="https://redux.js.org/"><img className="redux-logo" src={reduxLogo} alt="logo" /></a>
             </div>
         );
     }
