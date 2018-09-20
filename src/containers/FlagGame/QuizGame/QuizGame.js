@@ -13,8 +13,9 @@ import RandomFlag from '../../../components/RandomFlag/RandomFlag';
 class QuizGame extends Component {
 
     state = {
-        wrongAnswer: false,
-        wrongId: ''
+        wrongId: '',
+        rightId: '',
+        nextStage: false
     }
 
 
@@ -22,17 +23,20 @@ class QuizGame extends Component {
         //Check if its match to the flag
         const ans = checkAnswer(answer, flag);
         if (ans) {
-            this.setState({ wrongAnswer: false });
-            this.props.rightAnswerHandler(this.props.currentStage);
+            this.setState({ rightId: id, wrongId: '' });
+            setTimeout(() => this.nextStageHandler(this.props.currentStage), 1500);
         }
         if (!ans) {
-            this.setState({ wrongAnswer: true, wrongId: id });
+            this.setState({ wrongAnswer: true, wrongId: id, rightId: '' });
         }
+    }
+
+    nextStageHandler() {
+        this.props.rightAnswerHandler(this.props.currentStage);
     }
 
     renderGame = () => {
         const { game, currentStage, randomFlag, restartGameHandler } = this.props;
-
         return (
             <Row>
                 <Col sm="12" md="6" className="Flag-Col">
@@ -46,7 +50,8 @@ class QuizGame extends Component {
                         stage={currentStage}
                         flag={randomFlag}
                         click={this.answerHandler}
-                        id={this.state.wrongId} />
+                        wrongAnswerFlagId={this.state.wrongId}
+                        rightAnswerFlagId={this.state.rightId} />
                 </Col>
             </Row>
         );

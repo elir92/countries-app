@@ -59,8 +59,16 @@
     position: relative;
     top: 7px;
     left: 7px;
-    
 }
+
+.right-ans{
+    font-size: 30px;
+    color: green;
+    position: relative;
+    top: 7px;
+    left: 7px;
+}
+
 .Restart-Button{
     display: inline-block;
     position: absolute;
