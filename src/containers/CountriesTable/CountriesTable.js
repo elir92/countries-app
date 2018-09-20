@@ -16,7 +16,8 @@ class CountriesTable extends React.Component {
 
     state = {
         count: 10,
-        showButton: true
+        showButton: true,
+        height: window.innerHeight
     }
 
     componentDidMount() {
@@ -25,10 +26,13 @@ class CountriesTable extends React.Component {
         }
 
         window.addEventListener("scroll", this.handleScroll);
+        window.addEventListener('resize', this.handleWindowSizeChange);
+        this.state.height > 850 ? this.setState({ count: 10 }) : this.setState({ count: 5 });
     }
 
     componentWillUnmount() {
         window.removeEventListener("scroll", this.handleScroll);
+        window.removeEventListener('resize', this.handleWindowSizeChange);
     }
 
     isBottom(el) {
@@ -41,6 +45,10 @@ class CountriesTable extends React.Component {
             this.loadMoreHandler();
         }
     }
+
+    handleWindowSizeChange = () => {
+        this.setState({ width: window.innerHeight });
+    };
 
     loadMoreHandler = () => {
         if (this.state.count !== this.props.countries.length) {
@@ -84,6 +92,7 @@ class CountriesTable extends React.Component {
 
 
     render() {
+        console.log(this.state.height);
         return (
             <Fragment>
                 {!this.props.isPending ? this.renderTable() : <Spinner />}
