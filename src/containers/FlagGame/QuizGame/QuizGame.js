@@ -24,7 +24,7 @@ class QuizGame extends Component {
         const ans = checkAnswer(answer, flag);
         if (ans) {
             this.setState({ rightId: id, wrongId: '' });
-            setTimeout(() => this.nextStageHandler(this.props.currentStage), 1500);
+            setTimeout(() => this.nextStageHandler(this.props.currentStage), 1300);
         }
         if (!ans) {
             this.setState({ wrongAnswer: true, wrongId: id, rightId: '' });

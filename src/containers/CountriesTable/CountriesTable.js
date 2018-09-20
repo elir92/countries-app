@@ -82,17 +82,16 @@ class CountriesTable extends React.Component {
                 <Table id="scrolledTable" className="Table" striped bordered responsive>
                     <TableHead />
                     <TableBody>
-                        {!searchField.length ? <CountriesRows arr={currentCountries} modal={ModalStateHandler} /> : <CountriesRows arr={filteredCountry} modal={ModalStateHandler} />}
+                        <CountriesRows searchField={searchField} countries={currentCountries} filtered={filteredCountry} modal={ModalStateHandler} />
                     </TableBody>
                 </Table>
-                {!searchField.length ? <LoadButton showButton={this.state.showButton} count={this.state.count} load={this.loadMoreButton} /> : null}
+                <LoadButton searchField={searchField} showButton={this.state.showButton} count={this.state.count} load={this.loadMoreButton} />
             </Fragment>
         )
     }
 
 
     render() {
-        console.log(this.state.height);
         return (
             <Fragment>
                 {!this.props.isPending ? this.renderTable() : <Spinner />}
