@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import Layout from './containers/Layout';
-import AppNavbar from './components/AppNavbar/AppNavbar';
+import AppNavbar from './containers/AppNavbar/AppNavbar';
 import Footer from './components/Footer/Footer';
 import Home from './containers/Home/Home';
 import asyncComponent from './hoc/asyncComponent/asyncComponent';

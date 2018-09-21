@@ -18,7 +18,7 @@ class AppNavbar extends React.Component {
     render() {
         return (
             <Fragment>
-                <Navbar color="dark" dark expand="sm" className="mb-5">
+                <Navbar color="dark" dark expand="sm" className="mb-3">
                     <Container className="navbar-container">
                         <NavbarBrand href="">Countries Application</NavbarBrand>
                         <NavbarToggler onClick={this.toggleHandler} />
