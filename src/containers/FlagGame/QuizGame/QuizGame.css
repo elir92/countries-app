@@ -1,3 +1,7 @@
+.Quiz-Game{
+    margin-top: 70px;
+}
+
 .Flag-Img{
     width: 89%;
     height: 250px;
@@ -11,8 +15,6 @@
 .Flag-Col{
     text-align: center       
 }
-
-
 
 .Stage-Avatar{
     width: 50px;
@@ -71,10 +73,16 @@
 .Restart-Button{
     display: inline-block;
     position: absolute;
-    right: 28px;
+    right: 70px;
 }
 
+
+
 @media screen and (max-width: 600px) {
+    .Quiz-Game{
+        margin-top: 30px;
+    }
+
     .Flag-Img{
         width: 68%;
         height: 150px;
@@ -82,6 +90,7 @@
    
     .Restart-Button{
        margin-top: 5px;
+       right: 56px;
     }
     .Answer-Col{
         text-align: center;
@@ -105,3 +114,17 @@
         margin: auto;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .Restart-Button{
+        margin-top: 5px;
+        right: 50px;
+     }
+    }
+
+  @media screen and (max-width: 320px) {
+    .Restart-Button{
+        margin-top: 5px;
+        right: 40px;
+     }
+    }

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { restartGame, rightAnswer } from '../../../store/actions/actions';
 import { checkAnswer } from '../../../utility';
@@ -59,9 +59,9 @@ class QuizGame extends Component {
 
     render() {
         return (
-            <Fragment>
+            <div className="Quiz-Game">
                 {this.props.currentStage !== 10 ? this.renderGame() : <DoneGame restart={this.props.restartGameHandler} />}
-            </Fragment>
+            </div>
         );
     }
 }
