@@ -30,6 +30,10 @@ class CountriesTable extends React.Component {
         this.state.height > 850 ? this.setState({ count: 10 }) : this.setState({ count: 4 });
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.state.count <= nextProps.countries.length;
+    }
+
     componentWillUnmount() {
         window.removeEventListener("scroll", this.handleScroll);
         window.removeEventListener('resize', this.handleWindowSizeChange);
