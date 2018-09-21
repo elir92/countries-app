@@ -1,7 +1,10 @@
 .navbar-container{
-    font-family: 'Quicksand', sans-serif;
+    font-size: 1.3rem;
 }
-
+.navbar-brand{
+    font-size: 1.5rem;
+}
 .navbar-dark .navbar-nav .nav-link {
     color: white;
+ 
 }
