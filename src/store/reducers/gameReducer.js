@@ -54,7 +54,7 @@ const rightAnswer = (state, action) => {
     }
 }
 
-export const gameReducer = (state = initialState, action) => {
+ const gameReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionType.REQUEST_COUNTRIES_PENDING: return requestCountriesPending(state);
         case actionType.REQUEST_COUNTRIES_SUCCESS: return requestCountriesSuccess(state, action);
@@ -66,3 +66,4 @@ export const gameReducer = (state = initialState, action) => {
     }
 };
 
+export default gameReducer;

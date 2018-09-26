@@ -36,7 +36,7 @@ const modalToggle = (state) => {
 };
 
 
-export const tableReducer = (state = initialState, action) => {
+const tableReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionType.REQUEST_COUNTRIES_PENDING: return requestCountriesPending(state);
         case actionType.REQUEST_COUNTRIES_SUCCESS: return requestCountriesSuccess(state, action);
@@ -47,3 +47,5 @@ export const tableReducer = (state = initialState, action) => {
         default: return state;
     }
 };
+
+export default tableReducer;
