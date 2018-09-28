@@ -80,18 +80,23 @@ class CountriesTable extends React.Component {
             return country.name.toLowerCase().includes(searchField.toLowerCase());
         });
 
-        return (
-            <Fragment>
-                <SearchInput search={searchFieldHandler} />
-                <Table id="scrolledTable" className="Table" striped bordered responsive>
-                    <TableHead />
-                    <TableBody>
-                        <CountriesRows searchField={searchField} countries={currentCountries} filtered={filteredCountry} modal={ModalStateHandler} />
-                    </TableBody>
-                </Table>
-                <LoadButton searchField={searchField} showButton={this.state.showButton} count={this.state.count} load={this.loadMoreButton} />
-            </Fragment>
-        )
+        const initTable = () => {
+            return (
+                <Fragment>
+                    <SearchInput search={searchFieldHandler} />
+                    <Table id="scrolledTable" className="Table" striped bordered responsive>
+                        <TableHead />
+                        <TableBody>
+                            <CountriesRows searchField={searchField} countries={currentCountries} filtered={filteredCountry} modal={ModalStateHandler} />
+                        </TableBody>
+                    </Table>
+                    <LoadButton searchField={searchField} showButton={this.state.showButton} count={this.state.count} load={this.loadMoreButton} />
+                </Fragment>
+            )
+        }
+
+        return currentCountries.length ? initTable() : <h2 className="loading-msg">Loading...</h2>;
+
     }
 
 

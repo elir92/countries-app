@@ -32,3 +32,7 @@ input[type=text]:focus {
 tr{
     cursor: pointer;
 }
+
+.loading-msg{
+    text-align: center;
+}
