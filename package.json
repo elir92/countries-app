@@ -5,7 +5,7 @@
   "homepage": "https://elir92.github.io/countries-app/",
   "dependencies": {
     "axios": "^0.18.0",
-    "bootstrap": "^4.1.1",
+    "bootstrap": "^4.1.2",
     "gh-pages": "^1.2.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
