@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://elir92.github.io/countries-app/",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.3.1",
     "axios": "^0.18.0",
     "bootstrap": "^4.1.2",
     "gh-pages": "^1.2.0",
