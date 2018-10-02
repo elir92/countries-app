@@ -2,13 +2,13 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { requestCountries, setSearchField, setModalState } from '../../store/actions/actions';
 import { Table } from 'reactstrap';
-import TableHead from '../../components/TableHead/TableHead';
-import TableBody from '../../components/TableBody/TableBody';
-import CountriesRows from '../../components/CountriesRows/CountriesRows';
+import TableHead from '../../components/Table/TableHead/TableHead';
+import TableBody from '../../components/Table/TableBody/TableBody';
+import CountriesRows from '../../components/Table/CountriesRows/CountriesRows';
 import CountryModal from './CountryModal/CountryModal';
 import Spinner from '../../components/Spinner/Spinner';
-import LoadButton from '../../components/LoadButton/LoadButton';
-import SearchInput from '../../components/SearchInput/SearchInput';
+import LoadButton from '../../components/Table/LoadButton/LoadButton';
+import SearchInput from '../../components/Table/SearchInput/SearchInput';
 import './CountriesTable.css';
 
 

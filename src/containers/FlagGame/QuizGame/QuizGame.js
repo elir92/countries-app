@@ -4,11 +4,11 @@ import { restartGame, rightAnswer } from '../../../store/actions/actions';
 import { checkAnswer } from '../../../utility';
 import { Row, Col } from 'reactstrap';
 import './QuizGame.css';
-import DoneGame from '../../../components/DoneGame/DoneGame';
-import StageAvatar from '../../../components/StageAvatar/StageAvatar';
-import RestartButton from '../../../components/RestartButton/RestartButton';
-import AnswerList from '../../../components/AnswerList/AnswerList';
-import RandomFlag from '../../../components/RandomFlag/RandomFlag';
+import DoneGame from '../../../components/Game/DoneGame/DoneGame';
+import StageAvatar from '../../../components/Game/StageAvatar/StageAvatar';
+import RestartButton from '../../../components/Game/RestartButton/RestartButton';
+import AnswerList from '../../../components/Game/AnswerList/AnswerList';
+import RandomFlag from '../../../components/Game/RandomFlag/RandomFlag';
 
 class QuizGame extends Component {
 
