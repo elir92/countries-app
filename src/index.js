@@ -16,6 +16,15 @@ const middlewares = [thunk];
 if (process.env.NODE_ENV === `development`) {
     const logger = (createLogger());
     middlewares.push(logger);
+    const { whyDidYouUpdate } = require('why-did-you-update');
+    whyDidYouUpdate(React, {
+        exclude: [
+            // React Router
+            /^Route/,
+            // Switch 
+            /^Switch/
+        ]
+    });
 }
 
 const store = createStore(rootReducer, applyMiddleware(...middlewares));

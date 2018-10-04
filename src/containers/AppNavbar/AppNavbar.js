@@ -11,6 +11,13 @@ class AppNavbar extends React.Component {
         };
     }
 
+    shouldComponentUpdate(nextProps,nextState) {
+        if(this.state.isOpen !== nextState.isOpen){
+            return true;
+        }
+        return false;
+    }
+
     toggleHandler = () => {
         this.setState({ isOpen: !this.state.isOpen });
     }
