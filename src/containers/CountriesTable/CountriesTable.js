@@ -89,7 +89,7 @@ class CountriesTable extends React.Component {
             )
         }
 
-        return currentCountries.length ? initTable() : <h2 className="loading-msg">Loading...</h2>;
+        return currentCountries.length ? initTable() : <Spinner />;
 
     }
 
