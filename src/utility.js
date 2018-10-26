@@ -30,11 +30,3 @@ export const randBetween = (arr, n) => {
     }
     return result;
 }
-
-export const checkAnswer = (a, b) => {
-    if (a === b) {
-        return true;
-    } else {
-        return false;
-    }
-}

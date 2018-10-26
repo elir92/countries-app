@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { restartGame, rightAnswer } from '../../../store/actions/actions';
-import { checkAnswer } from '../../../utility';
 import { Row, Col } from 'reactstrap';
 import './QuizGame.css';
 import DoneGame from '../../../components/Game/DoneGame/DoneGame';
@@ -21,12 +20,10 @@ class QuizGame extends Component {
 
     answerHandler = (answer, flag, id) => {
         //Check if its match to the flag
-        const ans = checkAnswer(answer, flag);
-        if (ans) {
+        if (answer === flag) {
             this.setState({ rightId: id, wrongId: '' });
             setTimeout(() => this.nextStageHandler(this.props.currentStage), 1300);
-        }
-        if (!ans) {
+        } else {
             this.setState({ wrongAnswer: true, wrongId: id, rightId: '' });
         }
     }
