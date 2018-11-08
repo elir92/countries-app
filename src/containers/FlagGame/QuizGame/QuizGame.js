@@ -14,15 +14,16 @@ class QuizGame extends Component {
     state = {
         wrongId: '',
         rightId: '',
-        nextStage: false
+        nextStage: false,
+        answerFlag: false
     }
 
 
     answerHandler = (answer, flag, id) => {
         //Check if its match to the flag
         if (answer === flag) {
-            this.setState({ rightId: id, wrongId: '' });
-            setTimeout(() => this.nextStageHandler(this.props.currentStage), 1300);
+            this.setState({ rightId: id, wrongId: '', answerFlag: true });
+            setTimeout(() => this.nextStageHandler(this.props.currentStage), 1000);
         } else {
             this.setState({ wrongAnswer: true, wrongId: id, rightId: '' });
         }
@@ -30,6 +31,7 @@ class QuizGame extends Component {
 
     nextStageHandler() {
         this.props.rightAnswerHandler(this.props.currentStage);
+        this.setState({ answerFlag: false });
     }
 
     renderGame = () => {
@@ -48,7 +50,8 @@ class QuizGame extends Component {
                         flag={randomFlag}
                         click={this.answerHandler}
                         wrongAnswerFlagId={this.state.wrongId}
-                        rightAnswerFlagId={this.state.rightId} />
+                        rightAnswerFlagId={this.state.rightId}
+                        answerFlag={this.state.answerFlag} />
                 </Col>
             </Row>
         );
