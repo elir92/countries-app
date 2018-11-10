@@ -48,7 +48,7 @@ const restartGame = (state) => {
     return updateObject(state, { gameStatus: false, game: [], currentStage: 0 });
 }
 
-const rightAnswer = (state, action) => {
+const answerHandler = (state, action) => {
     if (action.payload <= 10) {
         return updateObject(state, { currentStage: action.payload, randomFlag: randFlag(state.game, action.payload) });
     }
@@ -61,7 +61,7 @@ const rightAnswer = (state, action) => {
         case actionType.REQUEST_COUNTRIES_FAILED: return requestCountriesFail(state, action);
         case actionType.START_GAME: return startGame(state);
         case actionType.RESTART_GAME: return restartGame(state);
-        case actionType.RIGHT_ANSWER: return rightAnswer(state, action);
+        case actionType.ANSWER_HANDLER: return answerHandler(state, action);
         default: return state;
     }
 };
