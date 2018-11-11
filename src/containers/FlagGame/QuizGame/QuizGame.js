@@ -16,7 +16,45 @@ class QuizGame extends Component {
         rightId: '',
         nextStage: false,
         answerFlag: false,
-        countRightAnswer: 0
+        countRightAnswer: 0,
+        timer: 7
+    }
+
+
+    tick() {
+        this.setState((prevState) => {
+            return {
+                timer: prevState.timer - 1
+            }
+        });
+    }
+
+    nextStageHandler(stage) {
+        this.props.answerHandler(stage);
+        this.setState({ answerFlag: false, timer: 7 });
+    }
+
+    componentDidMount() {
+        this.timerID = setInterval(
+            () => this.tick(),
+            1200
+        );
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextState.timer >= 0;
+    }
+
+
+    componentDidUpdate(prevProps, prevState) {
+
+        if (!this.state.timer) {
+            // this.nextStageHandler(this.props.currentStage);
+        }
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerID);
     }
 
 
@@ -37,10 +75,7 @@ class QuizGame extends Component {
         }
     }
 
-    nextStageHandler() {
-        this.props.answerHandler(this.props.currentStage);
-        this.setState({ answerFlag: false });
-    }
+
 
     renderStage = () => {
         const { game, currentStage, randomFlag, restartGameHandler } = this.props;
@@ -50,6 +85,7 @@ class QuizGame extends Component {
                     <RandomFlag flag={randomFlag.flag} />
                 </Col>
                 <Col sm="12" md="6" className="Answer-Col">
+                    <Avatar className="Timer-Avatar" context={this.state.timer} />
                     <Avatar className="Stage-Avatar" context={currentStage + 1} />
                     <RestartButton reset={restartGameHandler} />
                     <AnswerList
