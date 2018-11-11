@@ -49,7 +49,7 @@ class QuizGame extends Component {
     componentDidUpdate(prevProps, prevState) {
 
         if (!this.state.timer) {
-            // this.nextStageHandler(this.props.currentStage);
+            this.nextStageHandler(this.props.currentStage);
         }
     }
 

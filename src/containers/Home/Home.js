@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { restartGame } from '../../store/actions/actions';
 import './Home.css';
 import globe from '../../assets/globe.svg';
 import reactLogo from '../../assets/react-logo.svg';
 import reduxLogo from '../../assets/redux-logo.svg';
 
 class Home extends Component {
+    componentDidMount() {
+        this.props.restartGameHandler();
+    }
     render() {
         return (
             <div className="Home">
@@ -18,4 +23,11 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        restartGameHandler: () => dispatch(restartGame())
+    }
+}
+
+
+export default connect(null, mapDispatchToProps)(Home);

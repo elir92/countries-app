@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { requestCountries, setSearchField, setModalState } from '../../store/actions/actions';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+import { requestCountries, setSearchField, setModalState, restartGame } from '../../store/actions/actions';
 import { Table } from 'reactstrap';
 import TableHead from '../../components/Table/TableHead/TableHead';
 import TableBody from '../../components/Table/TableBody/TableBody';
@@ -27,6 +29,7 @@ class CountriesTable extends React.Component {
 
         window.addEventListener("scroll", this.handleScroll);
         this.state.height > 850 ? this.setState({ count: 10 }) : this.setState({ count: 4 });
+        this.props.restartGameHandler();
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -116,8 +119,17 @@ const mapDispatchToProps = (dispatch) => {
     return {
         requestCountriesHandler: () => dispatch(requestCountries()),
         searchFieldHandler: (e) => dispatch(setSearchField(e.target.value)),
-        ModalStateHandler: (country) => dispatch(setModalState(country))
+        ModalStateHandler: (country) => dispatch(setModalState(country)),
+        restartGameHandler: () => dispatch(restartGame())
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CountriesTable);
+const enhanceComponent = compose(
+    withRouter,
+    connect(mapStateToProps, mapDispatchToProps),
+);
+
+export default enhanceComponent(CountriesTable);
+
+
+// export default connect(mapStateToProps, mapDispatchToProps)(CountriesTable);
