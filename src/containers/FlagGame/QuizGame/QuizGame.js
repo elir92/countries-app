@@ -49,7 +49,7 @@ class QuizGame extends Component {
     componentDidUpdate(prevProps, prevState) {
 
         if (!this.state.timer) {
-            this.nextStageHandler(this.props.currentStage);
+            // this.nextStageHandler(this.props.currentStage);
         }
     }
 
@@ -85,7 +85,7 @@ class QuizGame extends Component {
                     <RandomFlag flag={randomFlag.flag} />
                 </Col>
                 <Col sm="12" md="6" className="Answer-Col">
-                    <span>{this.state.timer}</span>
+                    <Avatar className="Timer-Avatar" context={this.state.timer} />
                     <Avatar className="Stage-Avatar" context={currentStage + 1} />
                     <RestartButton reset={restartGameHandler} />
                     <AnswerList
