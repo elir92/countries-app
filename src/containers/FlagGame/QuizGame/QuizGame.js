@@ -37,7 +37,7 @@ class QuizGame extends Component {
     componentDidMount() {
         this.timerID = setInterval(
             () => this.tick(),
-            1000
+            1200
         );
     }
 
