@@ -51,6 +51,11 @@ class QuizGame extends Component {
         if (!this.state.timer) {
             this.nextStageHandler(this.props.currentStage);
         }
+       
+        if(prevProps.currentStage === 10) {
+            // Clear the timer after the game.
+            clearInterval(this.timerID);
+        };
     }
 
     componentWillUnmount() {
