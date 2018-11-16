@@ -31,7 +31,7 @@ class FlagGame extends Component {
     }
 
     render() {
-        return this.renderGame();
+        return this.props.countries.length ? this.renderGame() : <h1 style={{textAlign: 'center'}} className="Flag-Title">Loading...</h1>;
     }
 }
 
