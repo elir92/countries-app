@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Single Page Application based on:
 * React
 * Redux
+* React Router
 * Reactstrap
 * Countries API
 
