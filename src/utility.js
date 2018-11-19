@@ -14,6 +14,7 @@ export const displayPages = (arr, page_size) => {
     return pageNumbers;
 };
 
+// Updating object funcion
 export const updateObject = (oldObject, updatedProperties) => {
     return {
         ...oldObject,
