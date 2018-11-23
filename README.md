@@ -10,5 +10,5 @@ Single Page Application based on:
 
 ## Features
 
-* Table containing the list of countries including country's details from the API.
+* Table containing the list of countries including country's details.
 * Flag quiz game.
