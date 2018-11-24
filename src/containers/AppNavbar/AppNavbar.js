@@ -46,6 +46,11 @@ class AppNavbar extends React.Component {
                                         Flag Game
                                     </NavLink>
                                 </NavItem>
+                                <NavItem >
+                                    <NavLink tag={Link} to={process.env.PUBLIC_URL + "/charts"}>
+                                       Charts
+                                    </NavLink>
+                                </NavItem>
                             </Nav>
                         </Collapse>
                     </Container>
