@@ -7,13 +7,15 @@
     "@fortawesome/fontawesome-free": "^5.3.1",
     "axios": "^0.18.0",
     "bootstrap": "^4.1.2",
+    "chart.js": "^2.7.3",
     "gh-pages": "^1.2.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
+    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^1.1.5",
+    "react-scripts": "^2.1.1",
     "reactstrap": "^6.3.0",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
@@ -27,5 +29,11 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
