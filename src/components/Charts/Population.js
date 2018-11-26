@@ -1,31 +1,31 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
 
-const data = {
-    labels: [
-        'Red',
-        'Green',
-        'Yellow'
-    ],
-    datasets: [{
-        data: [300, 50, 100],
-        backgroundColor: [
-            '#FF6384',
-            '#28a745',
-            '#FFCE56'
-        ],
-        hoverBackgroundColor: [
-            '#FF6384',
-            '#28a745',
-            '#FFCE56'
-        ]
-    }]
-};
+
 
 const populationGraph = ({ popData }) => {
- 
-    return <Pie width={120}
-        height={50} data={data} />
+    
+    const populationArray = popData.map(country => country.population);
+    const countriesLabels = popData.map(country => country.name);
+
+    const data = {
+        labels:countriesLabels,
+        datasets: [{
+            data: populationArray,
+            backgroundColor: [
+                '#CD6155',
+                '#2E86C1',
+                '#16A085'
+            ],
+            hoverBackgroundColor: [
+                '#CD6155',
+                '#2E86C1',
+                '#16A085'
+            ]
+        }]
+    };
+
+    return <Pie width={100} height={50} data={data} />
 }
 
 export default populationGraph;
