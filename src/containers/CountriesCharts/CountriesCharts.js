@@ -21,6 +21,7 @@ class CountriesCharts extends Component {
         return (
             <Row>
                 <Col>
+                    <h2 style={{textAlign:'center'}}>Top Three Highest Population</h2>
                     <PopulationGraph popData={this.props.topThreeCountries} />
                 </Col>
                 <Col>
