@@ -9,16 +9,8 @@ import RegionGraph from '../../components/Charts/Regions';
 
 class CountriesCharts extends Component {
 
-    constructor() {
-        super();
-        this.state = {
-            topThree: []
-        }
-    }
-
-
     componentDidMount() {
-        if (!this.props.countries.length) {
+        if (!this.props.topThreeCountries.length) {
             this.props.requestCountriesHandler();
         }
     }
@@ -28,10 +20,10 @@ class CountriesCharts extends Component {
         return (
             <Row>
                 <Col>
-                    <PopulationGraph />
+                    <PopulationGraph popData={this.props.topThreeCountries} />
                 </Col>
                 <Col>
-                    <RegionGraph />
+                    <RegionGraph regions={this.props.regions} countedCountries={this.props.countedCountries}/>
                 </Col>
             </Row>
         );
@@ -40,7 +32,9 @@ class CountriesCharts extends Component {
 
 const mapStateToProps = state => {
     return {
-        countries: state.tableReducer.countries
+        topThreeCountries: state.chartsReducer.topThreeCountries,
+        regions: state.chartsReducer.regions,
+        countedCountries: state.chartsReducer.countedCountries
     }
 }
 
