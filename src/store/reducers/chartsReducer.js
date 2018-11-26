@@ -9,16 +9,18 @@ const initialState = {
     error: null
 }
 
-const requestCountriesPending = (state) => {
-    return updateObject(state, { isPending: true });
-};
+const topThreeCalc = (arr) => {
+    return arr.sort((a, b) => b.population - a.population).slice(0, 3);
+}
 
-const requestCountriesSuccess = (state, action) => {
-    // Move to outer functions...
-    const topThree = action.payload.sort((a, b) => b.population - a.population).slice(0, 3);
+const regionListExtract = (arr) => {
+    const regionList = arr.map(country => country.region).filter(region => region !== "");
+    const uniqueRegions = Array.from(new Set(regionList)).sort();
+    return uniqueRegions;
+}
 
-    const sortedRegion = action.payload.sort((a, b) => (a.region > b.region) - (a.region < b.region));
-
+const countedCountriesCalc = (arr) => {
+    const sortedRegion = arr.sort((a, b) => (a.region > b.region) - (a.region < b.region));
     const countedCountries = sortedRegion.reduce((regionResult, country) => {
         if (!country.region) return regionResult;
 
@@ -33,10 +35,21 @@ const requestCountriesSuccess = (state, action) => {
         return regionResult;
     }, []);
 
-    const regionList = action.payload.map(country => country.region).filter(region => region !== "");
-    const uniqueRegions = Array.from(new Set(regionList)).sort();
+    return countedCountries;
 
-    return updateObject(state, { topThreeCountries: topThree, regions: uniqueRegions, countedCountries: countedCountries, isPending: false });
+}
+
+const requestCountriesPending = (state) => {
+    return updateObject(state, { isPending: true });
+};
+
+const requestCountriesSuccess = (state, action) => {
+
+    const topThree = topThreeCalc(action.payload);
+    const regionList = regionListExtract(action.payload);
+    const countedCountries = countedCountriesCalc(action.payload);
+    
+    return updateObject(state, { topThreeCountries: topThree, regions: regionList, countedCountries: countedCountries, isPending: false });
 };
 
 const requestCountriesFail = (state, action) => {

@@ -15,6 +15,7 @@ class CountriesCharts extends Component {
         }
     }
 
+    // Add spinner / Loading..
 
     render() {
         return (
