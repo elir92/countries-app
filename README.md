@@ -7,8 +7,12 @@ Single Page Application based on:
 * React Router
 * Reactstrap
 * Countries API
+* Chart js & react-chartjs-2
 
 ## Features
 
 * Table containing the list of countries including country's details.
 * Flag quiz game.
+
+### Under Construction:
+Page with some of countries data, which represented on charts.
