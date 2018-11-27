@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "48461ea4e797c9774dabb4a0440d2f56",
-    "url": "/countries-app/static/media/fa-brands-400.48461ea4.woff2"
+    "revision": "7b464e274bc331f9a765d765359635a5",
+    "url": "/countries-app/static/media/fa-brands-400.7b464e27.woff"
   },
   {
     "revision": "235d1b7b81a845667f01",
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/countries-app/static/js/1.e1bacb0f.chunk.js"
   },
   {
-    "revision": "b5472631dbace30d549357ec325b9c62",
-    "url": "/countries-app/static/media/fa-brands-400.b5472631.svg"
+    "revision": "0079a0ab6bec4da7d6e16f2a2e87cd71",
+    "url": "/countries-app/static/media/fa-solid-900.0079a0ab.ttf"
   },
   {
     "revision": "a176e1e1fbb0b5f7765b",
@@ -28,24 +28,24 @@ self.__precacheManifest = [
     "url": "/countries-app/static/media/fa-solid-900.815694de.woff"
   },
   {
-    "revision": "df3d3e22e9120356ce52",
-    "url": "/countries-app/static/js/3.df3d3e22.chunk.js"
+    "revision": "9fd18f01ca754bfb173e",
+    "url": "/countries-app/static/js/3.9fd18f01.chunk.js"
   },
   {
     "revision": "6bc95c33ed15b9fbe5c8",
     "url": "/countries-app/static/js/4.6bc95c33.chunk.js"
   },
   {
-    "revision": "0079a0ab6bec4da7d6e16f2a2e87cd71",
-    "url": "/countries-app/static/media/fa-solid-900.0079a0ab.ttf"
+    "revision": "70e65a7d34902f2c350816ecfe2f6492",
+    "url": "/countries-app/static/media/fa-solid-900.70e65a7d.eot"
   },
   {
     "revision": "d948da3f136d21a2bd3b",
     "url": "/countries-app/static/js/5.d948da3f.chunk.js"
   },
   {
-    "revision": "079e807138dc15ed6f12",
-    "url": "/countries-app/static/js/runtime~main.079e8071.js"
+    "revision": "08c39211484e30131b34",
+    "url": "/countries-app/static/js/runtime~main.08c39211.js"
   },
   {
     "revision": "de21dbaf337c6f8beb068c44e8a427f9",
@@ -68,47 +68,47 @@ self.__precacheManifest = [
     "url": "/countries-app/static/media/fa-brands-400.9b6c8da3.eot"
   },
   {
-    "revision": "7b464e274bc331f9a765d765359635a5",
-    "url": "/countries-app/static/media/fa-brands-400.7b464e27.woff"
+    "revision": "48461ea4e797c9774dabb4a0440d2f56",
+    "url": "/countries-app/static/media/fa-brands-400.48461ea4.woff2"
   },
   {
     "revision": "947b9537bc0fecc8130d48eb753495a1",
     "url": "/countries-app/static/media/fa-brands-400.947b9537.ttf"
   },
   {
-    "revision": "7422060ca379ee9939d3b687d072acad",
-    "url": "/countries-app/static/media/fa-regular-400.7422060c.eot"
-  },
-  {
     "revision": "949a2b066ec37f5a384712fc7beaf2f1",
     "url": "/countries-app/static/media/fa-regular-400.949a2b06.woff2"
+  },
+  {
+    "revision": "7422060ca379ee9939d3b687d072acad",
+    "url": "/countries-app/static/media/fa-regular-400.7422060c.eot"
   },
   {
     "revision": "381af09a1366b6c2ae65eac5dd6f0588",
     "url": "/countries-app/static/media/fa-regular-400.381af09a.woff"
   },
   {
-    "revision": "73fe7f1effbf382f499831a0a9f18626",
-    "url": "/countries-app/static/media/fa-regular-400.73fe7f1e.ttf"
+    "revision": "b5472631dbace30d549357ec325b9c62",
+    "url": "/countries-app/static/media/fa-brands-400.b5472631.svg"
   },
   {
-    "revision": "b5a61b229c9c92a6ac21f5b0e3c6e9f1",
-    "url": "/countries-app/static/media/fa-regular-400.b5a61b22.svg"
+    "revision": "73fe7f1effbf382f499831a0a9f18626",
+    "url": "/countries-app/static/media/fa-regular-400.73fe7f1e.ttf"
   },
   {
     "revision": "14a08198ec7d1eb96d515362293fed36",
     "url": "/countries-app/static/media/fa-solid-900.14a08198.woff2"
   },
   {
-    "revision": "70e65a7d34902f2c350816ecfe2f6492",
-    "url": "/countries-app/static/media/fa-solid-900.70e65a7d.eot"
+    "revision": "b5a61b229c9c92a6ac21f5b0e3c6e9f1",
+    "url": "/countries-app/static/media/fa-regular-400.b5a61b22.svg"
   },
   {
     "revision": "d948da3f136d21a2bd3b",
     "url": "/countries-app/static/css/5.5e05189c.chunk.css"
   },
   {
-    "revision": "df3d3e22e9120356ce52",
+    "revision": "9fd18f01ca754bfb173e",
     "url": "/countries-app/static/css/3.b1c436c0.chunk.css"
   },
   {
@@ -120,7 +120,7 @@ self.__precacheManifest = [
     "url": "/countries-app/static/css/1.f58af960.chunk.css"
   },
   {
-    "revision": "d840f40642003e64aa71bbebf2efdf29",
+    "revision": "940a497a510dad4d6a8effcdc1e97456",
     "url": "/countries-app/index.html"
   }
 ];
