@@ -27,7 +27,7 @@ const countedCountriesCalc = (arr) => {
         let regionIndex = regionResult.findIndex((region) => country.region === region.name);
 
         if (~regionIndex) {
-            regionResult[regionIndex].count += 1;
+            regionResult[regionIndex].count++;
         } else {
             regionResult.push({ name: country.region, count: 1 });
 
