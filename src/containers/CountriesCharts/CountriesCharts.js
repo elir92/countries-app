@@ -12,9 +12,7 @@ import './CountriesCharts.css';
 class CountriesCharts extends Component {
 
     componentDidMount() {
-        if (!this.props.topThreeCountries.length) {
-            this.props.requestCountriesHandler();
-        }
+        this.props.requestCountriesHandler();
     }
 
     renderGraphs = () => {
@@ -26,7 +24,7 @@ class CountriesCharts extends Component {
                     <PopulationGraph popData={topThreeCountries} />
                 </Col>
                 <Col>
-                <h2 style={{ textAlign: 'center' }}>Countries Per Continent</h2>
+                    <h2 style={{ textAlign: 'center' }}>Countries Per Continent</h2>
                     <RegionGraph regions={regions} countedCountries={countedCountries} />
                 </Col>
             </Row>
