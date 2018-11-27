@@ -4,6 +4,8 @@ import { requestCountries } from '../../store/actions/actions';
 import { Row, Col } from 'reactstrap';
 import PopulationGraph from '../../components/Charts/Population';
 import RegionGraph from '../../components/Charts/Regions';
+import Spinner from '../../components/Spinner/Spinner';
+import './CountriesCharts.css';
 
 
 
@@ -18,23 +20,21 @@ class CountriesCharts extends Component {
     renderGraphs = () => {
         const { topThreeCountries, regions, countedCountries } = this.props;
         return (
-            <Row>
-                <Col>
-                    <h2 style={{ textAlign: 'center' }}>Top Three Highest Population</h2>
+            <Row className="Charts">
+                <Col className="TopThree">
+                    <h2 style={{ textAlign: 'center' }}>Top Highest Population</h2>
                     <PopulationGraph popData={topThreeCountries} />
                 </Col>
                 <Col>
+                <h2 style={{ textAlign: 'center' }}>Countries Per Continent</h2>
                     <RegionGraph regions={regions} countedCountries={countedCountries} />
                 </Col>
             </Row>
         );
     }
 
-
-    // Add spinner / Loading..
-
     render() {
-        return !this.props.isPending ? this.renderGraphs() : <h2 style={{ textAlign: 'center' }}>Loading...</h2>
+        return !this.props.isPending ? this.renderGraphs() : <Spinner />
     }
 }
 
