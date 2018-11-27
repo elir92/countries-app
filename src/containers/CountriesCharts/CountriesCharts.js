@@ -15,24 +15,32 @@ class CountriesCharts extends Component {
         }
     }
 
-    // Add spinner / Loading..
-
-    render() {
+    renderGraphs = () => {
+        const { topThreeCountries, regions, countedCountries } = this.props;
         return (
             <Row>
                 <Col>
-                    <PopulationGraph popData={this.props.topThreeCountries} />
+                    <h2 style={{ textAlign: 'center' }}>Top Three Highest Population</h2>
+                    <PopulationGraph popData={topThreeCountries} />
                 </Col>
                 <Col>
-                    <RegionGraph regions={this.props.regions} countedCountries={this.props.countedCountries}/>
+                    <RegionGraph regions={regions} countedCountries={countedCountries} />
                 </Col>
             </Row>
         );
+    }
+
+
+    // Add spinner / Loading..
+
+    render() {
+        return !this.props.isPending ? this.renderGraphs() : <h2 style={{ textAlign: 'center' }}>Loading...</h2>
     }
 }
 
 const mapStateToProps = state => {
     return {
+        isPending: state.chartsReducer.isPending,
         topThreeCountries: state.chartsReducer.topThreeCountries,
         regions: state.chartsReducer.regions,
         countedCountries: state.chartsReducer.countedCountries

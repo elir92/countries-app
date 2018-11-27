@@ -12,12 +12,12 @@ const regionGraph = ({ regions, countedCountries }) => {
         labels: regions,
         datasets: [
             {
-                label: 'Countries Per Region',
-                backgroundColor: 'rgba(255,99,132,0.2)',
-                borderColor: 'rgba(255,99,132,1)',
+                label: 'Number Of Countries',
+                backgroundColor: '#1b1a1a5c',
+                borderColor: '#343a40',
                 borderWidth: 1,
-                hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-                hoverBorderColor: 'rgba(255,99,132,1)',
+                hoverBackgroundColor: '#e9ebed',
+                hoverBorderColor: '#343a40',
                 data: countriesPerRegion
             }
         ]
