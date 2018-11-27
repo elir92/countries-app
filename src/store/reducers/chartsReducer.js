@@ -29,8 +29,8 @@ const countedCountriesCalc = (arr) => {
         if (~regionIndex) {
             regionResult[regionIndex].count += 1;
         } else {
+            regionResult.push({ name: country.region, count: 1 });
 
-            regionResult.push(Object.assign({}, { name: country.region, count: 1 }));
         }
         return regionResult;
     }, []);
@@ -48,7 +48,7 @@ const requestCountriesSuccess = (state, action) => {
     const topThree = topThreeCalc(action.payload);
     const regionList = regionListExtract(action.payload);
     const countedCountries = countedCountriesCalc(action.payload);
-    
+
     return updateObject(state, { topThreeCountries: topThree, regions: regionList, countedCountries: countedCountries, isPending: false });
 };
 
