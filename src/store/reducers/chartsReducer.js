@@ -58,9 +58,9 @@ const requestCountriesFail = (state, action) => {
 
 const chartsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionType.REQUEST_COUNTRIES_PENDING: return requestCountriesPending(state);
-        case actionType.REQUEST_COUNTRIES_SUCCESS: return requestCountriesSuccess(state, action);
-        case actionType.REQUEST_COUNTRIES_FAILED: return requestCountriesFail(state, action);
+        case actionType.REQUEST_COUNTRIES_FOR_CHARTS_PENDING: return requestCountriesPending(state);
+        case actionType.REQUEST_COUNTRIES_FOR_CHARTS_SUCCESS: return requestCountriesSuccess(state, action);
+        case actionType.REQUEST_COUNTRIES_FOR_CHARTS_FAILED: return requestCountriesFail(state, action);
         default: return state;
     }
 };

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { requestCountries } from '../../store/actions/actions';
+import { requestCountriesForCharts } from '../../store/actions/actions';
 import { Row, Col } from 'reactstrap';
 import PopulationGraph from '../../components/Charts/Population';
 import RegionGraph from '../../components/Charts/Regions';
@@ -50,7 +50,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        requestCountriesHandler: () => dispatch(requestCountries())
+        requestCountriesHandler: () => dispatch(requestCountriesForCharts())
     }
 }
 

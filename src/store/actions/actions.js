@@ -11,7 +11,7 @@ export const requestCountries = () => (dispatch) => {
 
 //---------------------------------------------------------
 
-// Country Table Actions...
+// Country Table Actions.
 
 export const setSearchField = (text) => ({
     type: actionType.CHANGE_SEARCH_FIELD,
@@ -29,7 +29,7 @@ export const modalToggle = () => ({
 
 //---------------------------------------------------------
 
-// Flag Game Actions......
+// Flag Game Actions.
 
 export const startGame = () => ({
     type: actionType.START_GAME
@@ -43,3 +43,15 @@ export const answerHandler = (num) => ({
     type: actionType.ANSWER_HANDLER,
     payload: num + 1
 });
+
+//---------------------------------------------------------
+
+// Charts Actions
+
+export const requestCountriesForCharts = () => (dispatch) => {
+    const url = "https://restcountries.eu/rest/v2/all?fields=name;region;population";
+    dispatch({ type: actionType.REQUEST_COUNTRIES_FOR_CHARTS_PENDING });
+    axios.get(url)
+        .then(countries => dispatch({ type: actionType.REQUEST_COUNTRIES_FOR_CHARTS_SUCCESS, payload: countries.data }))
+        .catch(error => dispatch({ type: actionType.REQUEST_COUNTRIES_FOR_CHARTS_FAILED, payload: error }));
+};
