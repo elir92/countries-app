@@ -13,5 +13,5 @@ Single Page Application based on:
 
 * Table containing the list of countries including country's details.
 * Flag quiz game.
-* Countries data, which represented on charts.
+* Countries data which represented on charts.
 
