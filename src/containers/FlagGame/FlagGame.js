@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { requestCountries, startGame } from '../../store/actions/actions';
+import { requestCountries, startGame,restartGame } from '../../store/actions/actions';
 import { Button } from 'reactstrap';
 import globe from '../../assets/globe.svg';
 import './FlagGame.css';
@@ -12,6 +12,10 @@ class FlagGame extends Component {
         if (!this.props.countries.length) {
             this.props.requestCountriesHandler();
         }
+    }
+
+    componentWillUnmount() {
+        this.props.restartGameHandler();
     }
 
     renderIntro = () => {
@@ -46,7 +50,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
     return {
         requestCountriesHandler: () => dispatch(requestCountries()),
-        startGameHandler: () => dispatch(startGame())
+        startGameHandler: () => dispatch(startGame()),
+        restartGameHandler: () => dispatch(restartGame())
     }
 }
 
