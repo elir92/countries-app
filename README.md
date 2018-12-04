@@ -1,13 +1,17 @@
+# Countries App
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-### Description
-Single Page Application based on:
+
+## Build With
 * React
 * Redux
 * React Router
-* Reactstrap
+* Reactstrap 
 * Countries API
 * Chart js & react-chartjs-2
+
+
 
 ## Features
 
