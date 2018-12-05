@@ -16,7 +16,7 @@
 
 ## Features
 
-* Table containing the list of countries including country's details.
+* Table with list of countries including country's details.
 * Flag quiz game.
-* Countries data which represented on charts.
+* Countries data represented on charts
 
