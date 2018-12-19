@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/countries-app/static/media/fa-regular-400.949a2b06.woff2"
   },
   {
-    "revision": "61556be7722d04ca26ce",
-    "url": "/countries-app/static/js/0.61556be7.chunk.js"
+    "revision": "781e76e2c3448a7ee311",
+    "url": "/countries-app/static/js/0.781e76e2.chunk.js"
   },
   {
     "revision": "c42a4ae5d13eb9e9a5c9",
@@ -16,40 +16,40 @@ self.__precacheManifest = [
     "url": "/countries-app/static/media/fa-solid-900.38508b2e.svg"
   },
   {
-    "revision": "65deef0e6be4394c46b0",
-    "url": "/countries-app/static/js/2.65deef0e.chunk.js"
+    "revision": "5ca25eb51c1ec23320db",
+    "url": "/countries-app/static/js/2.5ca25eb5.chunk.js"
   },
   {
     "revision": "b5472631dbace30d549357ec325b9c62",
     "url": "/countries-app/static/media/fa-brands-400.b5472631.svg"
   },
   {
-    "revision": "3b22e56910715a385def",
-    "url": "/countries-app/static/js/3.3b22e569.chunk.js"
-  },
-  {
-    "revision": "0079a0ab6bec4da7d6e16f2a2e87cd71",
-    "url": "/countries-app/static/media/fa-solid-900.0079a0ab.ttf"
-  },
-  {
-    "revision": "003ea74a5d37dfe37ec8",
-    "url": "/countries-app/static/js/4.003ea74a.chunk.js"
-  },
-  {
-    "revision": "de04ddbcd341dbcaadd6",
-    "url": "/countries-app/static/js/5.de04ddbc.chunk.js"
+    "revision": "fa4f662088948769105b",
+    "url": "/countries-app/static/js/3.fa4f6620.chunk.js"
   },
   {
     "revision": "70e65a7d34902f2c350816ecfe2f6492",
     "url": "/countries-app/static/media/fa-solid-900.70e65a7d.eot"
   },
   {
+    "revision": "64bc64f72921f2d0f20d",
+    "url": "/countries-app/static/js/4.64bc64f7.chunk.js"
+  },
+  {
+    "revision": "5f34dc1d1ad4f2227603",
+    "url": "/countries-app/static/js/5.5f34dc1d.chunk.js"
+  },
+  {
+    "revision": "0079a0ab6bec4da7d6e16f2a2e87cd71",
+    "url": "/countries-app/static/media/fa-solid-900.0079a0ab.ttf"
+  },
+  {
     "revision": "65d764701c6d4559465c",
     "url": "/countries-app/static/js/6.65d76470.chunk.js"
   },
   {
-    "revision": "97b53536946638609908",
-    "url": "/countries-app/static/js/runtime~main.97b53536.js"
+    "revision": "1f2c65a4e15621b381f4",
+    "url": "/countries-app/static/js/runtime~main.1f2c65a4.js"
   },
   {
     "revision": "de21dbaf337c6f8beb068c44e8a427f9",
@@ -112,19 +112,19 @@ self.__precacheManifest = [
     "url": "/countries-app/static/css/6.35ebe94a.chunk.css"
   },
   {
-    "revision": "003ea74a5d37dfe37ec8",
-    "url": "/countries-app/static/css/4.e69ec4b4.chunk.css"
+    "revision": "64bc64f72921f2d0f20d",
+    "url": "/countries-app/static/css/4.0e71f377.chunk.css"
   },
   {
-    "revision": "3b22e56910715a385def",
-    "url": "/countries-app/static/css/3.fb3ee80d.chunk.css"
+    "revision": "fa4f662088948769105b",
+    "url": "/countries-app/static/css/3.f6c40897.chunk.css"
   },
   {
-    "revision": "65deef0e6be4394c46b0",
-    "url": "/countries-app/static/css/2.9b7f4825.chunk.css"
+    "revision": "5ca25eb51c1ec23320db",
+    "url": "/countries-app/static/css/2.d52e8342.chunk.css"
   },
   {
-    "revision": "dab748cdacc77e5cef070fb94529b647",
+    "revision": "0974b34476f352ce576949b6ccad7636",
     "url": "/countries-app/index.html"
   }
 ];
