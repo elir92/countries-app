@@ -31,7 +31,12 @@ class QuizGame extends Component {
 
     nextStageHandler(stage) {
         this.props.answerHandler(stage);
-        this.setState({ answerFlag: false, timer: 7 });
+        this.setState((prevState, props) => {
+            return {
+                answerFlag: false,
+                timer: 7
+            }
+        });
     }
 
     componentDidMount() {
@@ -47,12 +52,11 @@ class QuizGame extends Component {
 
 
     componentDidUpdate(prevProps, prevState) {
-
         if (!this.state.timer) {
             this.nextStageHandler(this.props.currentStage);
         }
-       
-        if(prevProps.currentStage === 10) {
+
+        if (prevProps.currentStage === 10) {
             // Clear the timer after the game.
             clearInterval(this.timerID);
         };
@@ -70,12 +74,13 @@ class QuizGame extends Component {
                     countRightAnswer: prevState.countRightAnswer + 1,
                     rightId: id,
                     wrongId: '',
-                    answerFlag: true
+                    answerFlag: true,
+                    timer: '0'
                 }
             });
             setTimeout(() => this.nextStageHandler(this.props.currentStage), 1000);
         } else {
-            this.setState({ wrongAnswer: true, wrongId: id, rightId: '', answerFlag: true });
+            this.setState({ wrongAnswer: true, wrongId: id, rightId: '', answerFlag: true, timer: '0' });
             setTimeout(() => this.nextStageHandler(this.props.currentStage), 1000);
         }
     }
