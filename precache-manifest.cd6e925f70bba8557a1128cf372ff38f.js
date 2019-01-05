@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/countries-app/static/media/fa-solid-900.38508b2e.svg"
   },
   {
-    "revision": "5ca25eb51c1ec23320db",
-    "url": "/countries-app/static/js/2.5ca25eb5.chunk.js"
+    "revision": "7cfdb1b55474febba5c4",
+    "url": "/countries-app/static/js/2.7cfdb1b5.chunk.js"
   },
   {
     "revision": "b5472631dbace30d549357ec325b9c62",
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/countries-app/static/js/3.fa4f6620.chunk.js"
   },
   {
-    "revision": "70e65a7d34902f2c350816ecfe2f6492",
-    "url": "/countries-app/static/media/fa-solid-900.70e65a7d.eot"
+    "revision": "0079a0ab6bec4da7d6e16f2a2e87cd71",
+    "url": "/countries-app/static/media/fa-solid-900.0079a0ab.ttf"
   },
   {
     "revision": "64bc64f72921f2d0f20d",
@@ -40,16 +40,16 @@ self.__precacheManifest = [
     "url": "/countries-app/static/js/5.5f34dc1d.chunk.js"
   },
   {
-    "revision": "0079a0ab6bec4da7d6e16f2a2e87cd71",
-    "url": "/countries-app/static/media/fa-solid-900.0079a0ab.ttf"
+    "revision": "70e65a7d34902f2c350816ecfe2f6492",
+    "url": "/countries-app/static/media/fa-solid-900.70e65a7d.eot"
   },
   {
-    "revision": "65d764701c6d4559465c",
-    "url": "/countries-app/static/js/6.65d76470.chunk.js"
+    "revision": "85333e24ec13137a9c4c",
+    "url": "/countries-app/static/js/6.85333e24.chunk.js"
   },
   {
-    "revision": "1f2c65a4e15621b381f4",
-    "url": "/countries-app/static/js/runtime~main.1f2c65a4.js"
+    "revision": "886e572634a0b4c9736e",
+    "url": "/countries-app/static/js/runtime~main.886e5726.js"
   },
   {
     "revision": "de21dbaf337c6f8beb068c44e8a427f9",
@@ -108,8 +108,8 @@ self.__precacheManifest = [
     "url": "/countries-app/static/css/main.d1166a31.chunk.css"
   },
   {
-    "revision": "65d764701c6d4559465c",
-    "url": "/countries-app/static/css/6.35ebe94a.chunk.css"
+    "revision": "85333e24ec13137a9c4c",
+    "url": "/countries-app/static/css/6.75f03c70.chunk.css"
   },
   {
     "revision": "64bc64f72921f2d0f20d",
@@ -120,11 +120,11 @@ self.__precacheManifest = [
     "url": "/countries-app/static/css/3.f6c40897.chunk.css"
   },
   {
-    "revision": "5ca25eb51c1ec23320db",
-    "url": "/countries-app/static/css/2.d52e8342.chunk.css"
+    "revision": "7cfdb1b55474febba5c4",
+    "url": "/countries-app/static/css/2.6b32e343.chunk.css"
   },
   {
-    "revision": "0974b34476f352ce576949b6ccad7636",
+    "revision": "0269942b41e1d9d67b4ed477d5f04566",
     "url": "/countries-app/index.html"
   }
 ];
